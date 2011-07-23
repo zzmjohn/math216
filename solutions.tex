@@ -1,6 +1,7 @@
 \documentclass[oneside, openany]{memoir}
 \usepackage[leqno]{amsmath}
 \usepackage{amsthm}
+\usepackage{colonequals}
 \usepackage{hyperref}
 \usepackage{thmtools}
 \usepackage{xspace}
@@ -26,8 +27,37 @@
 \newcommand\resp{\foreign{resp.}}
 \newcommand\etc{\foreign{etc.}}
 
-\newcommand\category[1]{\mathsf{#1}}
+\makeatletter
+\newcommand*\map@arrow[1][]{\csname#1rightarrow\endcsname{}}
+ 
+\newcommand*\function@textstyle[4][]{#2\colon#3\map@arrow[#1]#4}
+\newcommand*\function[4][]{%
+  \mathchoice
+  {\function@textstyle[long#1]{#2}{#3}{#4}}
+  {\function@textstyle[#1]{#2}{#3}{#4}}
+  {\function@textstyle[#1]{#2}{#3}{#4}}
+  {\function@textstyle[#1]{#2}{#3}{#4}}
+}
+\newcommand*\map@textstyle[6][]{#2\colon#3\rightarrow#4:#5\mapsto#6}
+\newcommand*\map[6][]{%
+  \mathchoice
+    {#2\colon\
+      \begin{array}{ccc}
+        #3&~\map@arrow[long#1]~&#4 \\
+        #5&~\longmapsto~&#6
+      \end{array}
+    }
+  {\map@textstyle[#1]{#2}{#3}{#4}{#5}{#6}}
+  {\map@textstyle[#1]{#2}{#3}{#4}{#5}{#6}}
+  {\map@textstyle[#1]{#2}{#3}{#4}{#5}{#6}}
+}
+\makeatother
 
+
+\newcommand\category[1]{\mathsf{#1}}
+\newcommand\identity{\mathrm{id}}
+
+\DeclareMathOperator\Image{Im}
 \DeclareMathOperator\Mor{Mor}
 
 \title{Solutions to Foundations of Algebraic Geometry}
@@ -74,9 +104,4 @@ There are no exercises in this chapter.
 \chapter{Some properties of schemes}
 \input{ch6.tex}
 
-\part{Morphisms of schemes}
-
-\part{Quasicoherent sheaves}
-
-\part{More}
 \end{document}

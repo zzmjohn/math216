@@ -23,7 +23,7 @@ There are no exercises in this section.
   By conjugation, isomorphic objects have isomorphic automorphism groups.
 \end{exercise}
 
-\begin{exercise} % TODO
+\begin{exercise} % TODO I should probably do this
   Linear algebra exercise. I will do this one if I feel inspired.
 \end{exercise}
 
@@ -35,6 +35,7 @@ There are no exercises in this section.
 \section{Universal properties determine an object up to unique isomorphism}
 
 \begin{exercise}
+  \label{exercise:23a}
   Take~$A$ and~$B$ initial objects. As there exist (unique) morphisms~$A\to B$ and~$B\to A$, we can compose them, obtaining morphisms~$A\to A$ and~$B\to B$. But the identity is another candidate for this morphisms, so by uniqueness of the morphisms~$A$ and~$B$ are isomorphic.
 
   The proof for final objects is completely the same.
@@ -42,7 +43,7 @@ There are no exercises in this section.
 
 \begin{exercise}
   \begin{description}
-    \item[$\category{Sets}$] The initial object is the empty set~$\emptyset$, the singleton~$\left\{ x \right\}$ is the final object (all singletons are isomorphic by the previous exercise).
+    \item[$\category{Sets}$] The initial object is the empty set~$\emptyset$, the singleton~$\left\{ x \right\}$ is the final object (all singletons are isomorphic as stated before in~\autoref{exercise:23a}).
     \item[$\category{Rings}$] As the image of~$1\in\mathbb{Z}$ determines the entire ring morphism, the ring of integers~$\mathbb{Z}$ is the initial object. The final object is the trivial ring (in which~$0=1$).
     \item[$\category{Top}$] The initial object is the empty set~$\emptyset$ equipped with the topology consisting of~$1$~open set, the final object is the singleton equipped with the topology consisting of the empty set and the entire space.
   \end{description}
@@ -57,4 +58,62 @@ There are no exercises in this section.
   \end{equation}
 
   Conversely, take~$a,b\in A$ and~$a\neq b$ such that their images are equal in the localization. That means there exists an~$s\in S$ such that~$s(a-b)=0$, so~$a-b\neq 0$ is a zerodivisor as~$0\notin S$.
+\end{exercise}
+
+\begin{exercise}
+  \label{exercise:23d}
+  The~$A$\nobreakdash-algebra~$S^{-1}A$ is a member of this category: an element~$s\in S$ is a unit as it is inverted by~$1/s$. It is furthermore initial among these algebras because the unique morphism~$\overline{\varphi}\colon S^{-1}A\to B$ is given by~$\overline{\varphi}(r/s)=\varphi(r)\varphi(s)^{-1}$ where~$\varphi\colon A\to B$ is the structure map.
+
+  Now this morphism~$\overline{\varphi}$ is unique because if~$\psi$ would be another morphism extending~$\mathrm{i}\colon A\to S^{-1}A$ we'd find
+  \begin{equation}
+    \psi\left( \frac{r}{s} \right)=\psi\left( \frac{r}{1} \right)\psi\left( \frac{1}{s} \right)=\varphi(r)\varphi(s)^{-1}
+  \end{equation}
+  as we split the fraction into parts on which~$\mathrm{i}$ works.
+\end{exercise}
+
+\begin{exercise} % TODO this might be a little short
+  The definition is already given in the hint. The checks for the~$S^{-1}A$\nobreakdash-module structure are trivial and the universal property is satisfied by the proof from~\autoref{exercise:23d}.
+\end{exercise}
+
+\begin{exercise}
+  The isomorphism is given by
+  \begin{equation}
+    \frac{1}{s}\left( m_1,\dots,m_n \right)\mapsto \left( \frac{m_1}{s},\frac{m_2}{s},\dots,\frac{m_n}{s} \right)
+  \end{equation}
+  with the inverse map being
+  \begin{equation}
+    \left( \frac{m_1}{s_1},\ldots,\frac{m_n}{s_n} \right)\mapsto\frac{1}{\prod_{i=1}^n s_i}\left( m_1\prod_{i\neq 1}s_i,\ldots,m_n\prod_{i\neq n}s_i \right).
+  \end{equation}
+
+  In the infinite case the product of the nominators is not defined. In the scenario of the hint that is given, the image under the inverse map has both a division by zero and a multiplication by infinity.
+\end{exercise}
+
+\begin{exercise}
+  It is possible to proof that
+  \begin{equation}
+    \mathbb{Z}/(m)\otimes_\mathbb{Z}\mathbb{Z}/(n)\cong\mathbb{Z}/(d)
+  \end{equation}
+  with~$d\colonequals\gcd(m,n)$. In order to do so: observe that
+  \begin{equation}
+    x\otimes y=\left( xy \right)\otimes 1=xy\left( 1\otimes 1 \right)
+  \end{equation}
+  hence~$1\otimes 1$ is the generator of a cyclic group that represents the tensor product. Now~$d(1\otimes 1)=0$ because both~$m(1\otimes 1)$ and~$n(1\otimes 1)$ are zero by bringing it into the correct factor and using B\'ezout's identity. So the order of the cyclic group divides~$d$.
+  
+  Now we can map the direct product into~$\mathbb{Z}/(d)$ in an obvious way, which induces a map from the tensor product to~$\mathbb{Z}/(d)$. The element~$1\otimes 1$ is mapped to~$1$ and consequently has order~$d$, so there is an element of order \emph{at least~$d$}. Hence we have obtained the desired isomorphism.
+
+  In this special case:~$\gcd(10,12)=2$.
+\end{exercise}
+
+\begin{exercise} % TODO expand / rewrite
+  That~$f\otimes\identity\colon M\otimes N\to M''\otimes N$ is still surjective is obvious.
+
+  For the surjection of~$M'\otimes N$ onto the kernel of~$f\otimes\identity$ we have to prove that in
+  \begin{equation}
+    M\otimes N\to (M\otimes N)/\Image((M'\to M)\otimes\identity)\to M''\otimes N,
+  \end{equation}
+  the last morphism being the induced morphism from~$f\otimes\identity$ is invertible. Construct the induced~$\overline{\varphi}$ from
+  \begin{equation}
+    \map{\varphi}{M''\otimes N}{(M\otimes N)/\Image((M'\to M)\otimes\identity)}{m''\otimes n}{m\otimes n+\Image((M'\to M)\otimes\identity)}
+  \end{equation}
+  where~$m\in f^{-1}(m'')$ by surjectivity of~$f$. Now~$\varphi$ is well defined, bilinear and therefore extends to~$\overline{\varphi}$. Now the composition~$\overline{\varphi}\circ\overline{f\otimes\identity}$ is the identity, hence the induced morphism is invertible and we have obtained exactness.
 \end{exercise}
