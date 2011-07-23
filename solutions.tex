@@ -2,16 +2,32 @@
 \usepackage[leqno]{amsmath}
 \usepackage{amsthm}
 \usepackage{thmtools}
+\usepackage{xspace}
 
 \usepackage{tgpagella}
+\usepackage[sc]{mathpazo}
 \usepackage{microtype}
 
 \chapterstyle{companion}
 
 \swapnumbers
 \declaretheoremstyle[headfont = \scshape, bodyfont = \normalfont, qed = \qedsymbol]{foag}
-\declaretheorem[style = foag]{exercise}
+\declaretheorem[style = foag, numberwithin = section]{exercise}
 \renewcommand{\theexercise}{\textbf{\arabic{chapter}.\arabic{section}.\Alph{exercise}}}
+
+\newcommand\foreign[1]{\emph{#1}}
+\newcommand\eg{\foreign{e.g.}}
+\newcommand\Eg{\foreign{E.g.}}
+\newcommand\ie{\foreign{i.e.}\xspace}
+\newcommand\Ie{\foreign{I.e.}}
+\newcommand\vs{\foreign{vs.~}}
+\newcommand\cf{\foreign{cf.\xspace}}
+\newcommand\resp{\foreign{resp.}}
+\newcommand\etc{\foreign{etc.}}
+
+\newcommand\category[1]{\mathsf{#1}}
+
+\DeclareMathOperator\Mor{Mor}
 
 \title{Solutions to Foundations of Algebraic Geometry}
 \author{Pieter Belmans}

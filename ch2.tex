@@ -1,0 +1,60 @@
+\section{Motivation}
+
+There are no exercises in this section.
+
+
+\section{Categories and functors}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item The elements of the group(oid) correspond to the morphisms. As every morphism is an isomorphism, we can only compose morphisms on the same object. Now in case of a single object, all axioms for a group are satisfied, as isomorphisms lead to inverse elements.
+
+    \item Take the category of a group and copy the unique object, together with all its morphisms. Voil\`a, a groupoid.
+
+      A natural example of groupoids is the fundamental groupoid of a topological space. You cannot combine loops that have different base points.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  By definition of \emph{invertible element of~$\Mor(A,A)$} the automorphisms form a group: we get composition and associativity from the category and the identity and inverse from our choice of elements.
+  
+  In case of~$\category{Sets}$ the automorphisms are the permutations of the set, \ie, bijections. In case of~$\category{Vec}_k$ the automorphisms are bijective linear self-maps.
+
+  By conjugation, isomorphic objects have isomorphic automorphism groups.
+\end{exercise}
+
+\begin{exercise} % TODO
+  Linear algebra exercise. I will do this one if I feel inspired.
+\end{exercise}
+
+\begin{exercise}
+  A basis for a finite-dimensional vectorspace has a well-defined cardinality, defining its dimension. So the inverse functor~$\category{f.d.\ Vec}_k\to\mathcal{V}$ maps an~$n$\nobreakdash-dimensional vectorspace~$V$ to~$k^n$, while every linear map between finite-dimensional vectorspaces can be written against a choice of bases. As we were allowed to pick a basis for each vectorspace simultaneously, every linear map admits by linear algebra magic with tons of indices a representation as a matrix.
+\end{exercise}
+
+
+\section{Universal properties determine an object up to unique isomorphism}
+
+\begin{exercise}
+  Take~$A$ and~$B$ initial objects. As there exist (unique) morphisms~$A\to B$ and~$B\to A$, we can compose them, obtaining morphisms~$A\to A$ and~$B\to B$. But the identity is another candidate for this morphisms, so by uniqueness of the morphisms~$A$ and~$B$ are isomorphic.
+
+  The proof for final objects is completely the same.
+\end{exercise}
+
+\begin{exercise}
+  \begin{description}
+    \item[$\category{Sets}$] The initial object is the empty set~$\emptyset$, the singleton~$\left\{ x \right\}$ is the final object (all singletons are isomorphic by the previous exercise).
+    \item[$\category{Rings}$] As the image of~$1\in\mathbb{Z}$ determines the entire ring morphism, the ring of integers~$\mathbb{Z}$ is the initial object. The final object is the trivial ring (in which~$0=1$).
+    \item[$\category{Top}$] The initial object is the empty set~$\emptyset$ equipped with the topology consisting of~$1$~open set, the final object is the singleton equipped with the topology consisting of the empty set and the entire space.
+  \end{description}
+
+  The category subsets of a set and the category of open sets in a topological space are both \emph{bounded lattices}. Or, as there is either no morphism (if two sets are incomparable) or one morphism (if one set is contained in the other), we need to find objects that are either smaller or greater than all other objects. These are the empty set and the set~$X$.
+\end{exercise}
+
+\begin{exercise}
+  Take~$s\in S$ a zerodisivor and let~$b\in A$ such that~$bs=0$. Now the image of~$b$ is equal to zero as
+  \begin{equation}
+    \frac{b}{1}=\frac{0}{1}\Longleftrightarrow s\left( b-0 \right)=0.
+  \end{equation}
+
+  Conversely, take~$a,b\in A$ and~$a\neq b$ such that their images are equal in the localization. That means there exists an~$s\in S$ such that~$s(a-b)=0$, so~$a-b\neq 0$ is a zerodivisor as~$0\notin S$.
+\end{exercise}
