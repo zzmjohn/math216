@@ -1,0 +1,51 @@
+\documentclass[oneside, openany]{memoir}
+\usepackage[leqno]{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+
+\usepackage{tgpagella}
+\usepackage{microtype}
+
+\chapterstyle{companion}
+
+\swapnumbers
+\declaretheoremstyle[headfont = \scshape, bodyfont = \normalfont, qed = \qedsymbol]{foag}
+\declaretheorem[style = foag]{exercise}
+\renewcommand{\theexercise}{\textbf{\arabic{chapter}.\arabic{section}.\Alph{exercise}}}
+
+\title{Solutions to Foundations of Algebraic Geometry}
+\author{Pieter Belmans}
+
+\begin{document}
+
+\maketitle
+
+These notes contain my solutions to Ravi Vakil's Foundations of Algebraic Geometry. More information will follow.
+
+\tableofcontents*
+
+
+\chapter{Introduction}
+There are no exercises in this chapter.
+
+
+\part{Preliminaries}
+
+\chapter{Some category theory}
+\input{ch2.tex}
+
+\chapter{Sheaves}
+\input{ch3.tex}
+
+
+\part{Schemes}
+
+\chapter{Toward affine schemes}
+\input{ch4.tex}
+
+\chapter{The structure sheaf and the definition of schemes in general}
+\input{ch5.tex}
+
+\chapter{Some properties of schemes}
+\input{ch6.tex}
+\end{document}
