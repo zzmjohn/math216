@@ -117,3 +117,36 @@ There are no exercises in this section.
   \end{equation}
   where~$m\in f^{-1}(m'')$ by surjectivity of~$f$. Now~$\varphi$ is well defined, bilinear and therefore extends to~$\overline{\varphi}$. Now the composition~$\overline{\varphi}\circ\overline{f\otimes\identity}$ is the identity, hence the induced morphism is invertible and we have obtained exactness.
 \end{exercise}
+
+\begin{exercise}
+  Unique up to unique isomorphism means that the object is not necessarily unique, but all objects satisfying the universal property are isomorphic using a unique (iso)morphism (as~$f$ is said to be so). Hence these objects have trivial automorphism groups. By the same proof as for the universal property of categorical products this holds for tensor products.
+\end{exercise}
+
+\begin{exercise} % TODO expand?
+  The construction exactly quotients those objects that correspond to the bilinearity of the morphisms that are considered. Therefore all morphisms~$M\times N\to T'$ split uniquely through~$T$.
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item Let's tediously check all module axioms. Take~$b_1,b_2\in B$ and~$b\otimes m,b'\otimes m'\in B\otimes_A M$. We have
+      \begin{description}
+        \item[$r(x+y)=rx+ry$] Using the axioms of the tensor product we obtain
+          \begin{equation}
+            \begin{aligned}
+              b_1(b\otimes m+b'\otimes m') &= b_1\left( (b+b')\otimes (m+m') \right) \\
+              &= \left( b_1(b+b') \right)\otimes(m+m') \\
+              &= (b_1b+b_1b')\otimes (m+m') \\
+              &= b_1b\otimes (m+m')+b_1(b'\otimes(m+m') \\
+              &= b\otimes b_1(m+m')+b'\otimes b_1(m+m') \\
+              &=
+            \end{aligned}
+          \end{equation}
+
+        \item[$(r+s)x=rx+sx$] 
+
+        \item[$(rs)x=r(sx)$] 
+
+        \item[$1_Rx=x$] 
+      \end{description}
+  \end{enumerate}
+\end{exercise}

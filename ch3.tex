@@ -1,0 +1,36 @@
+\section{Motivating example: the sheaf of differentiable functions}
+
+\begin{exercise}
+  As every element of~$\mathcal{O}_p\setminus\mathfrak{m}$ is nonzero in a neighbourhood of~$p$ we can restrict an element such that it is invertible there, a property which is preserved when taking the stalk. Hence the germ of a non-vanishing function is invertible and~$\mathfrak{m}$ is invertible.
+\end{exercise}
+
+\begin{exercise} % TODO find out what is asked for
+  I don't really have a differential geometry background and I fail to see what should be proved. But I should revisit this exercise later.
+\end{exercise}
+
+
+\section{Definition of sheaf and presheaf}
+
+\begin{exercise}
+  A functor assigns an object in~$\category{Sets}$ to every object in the category of open sets of the topological space~$X$. As an inclusion of sets is reflected as a morphism of the two open sets involved, this is translated to a morphism of sets in the codomain category\footnote{I have never seen this terminology, don't shoot me if I missed some more obvious wording.}. Identities are preserved by functors, so~$\res_{U,U}=\identity_{\mathcal{F}(U)}$ by definition. For the commutativity of restriction maps, this is by the \emph{contravariance} of the functor.
+\end{exercise}
+
+\begin{exercise} % TODO finish this
+  \begin{enumerate}
+    \item The presheaf axioms are (trivially) true by restriction of functions. Yet it is not a sheaf, take~$x\mapsto|x|$. On~$\ball(0,n)$ the function is bounded by~$n$, we can take~$\mathbb{C}=\bigcup_{n\in\mathbb{N}}\ball(0,n)$ and glue together a function on all of~$\mathbb{C}$ yet it is not bounded.
+
+    \item For some reason I am struggling with wording a good answer, yet it boils down to branch points and some open set that is not simply connected.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise} % TODO
+  I must think some more about this one, reading the category theory chapter some more.
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item If a function is differentiable, continuous or smooth in a point this notion extends to a small neighbourhood of that point. Hence for a covering we can glue the functions together.
+
+    \item Analogous.
+  \end{enumerate}
+\end{exercise}

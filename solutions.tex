@@ -1,4 +1,5 @@
 \documentclass[oneside, openany]{memoir}
+\usepackage{amsfonts}
 \usepackage[leqno]{amsmath}
 \usepackage{amsthm}
 \usepackage{colonequals}
@@ -11,6 +12,10 @@
 \usepackage{microtype}
 
 \chapterstyle{companion}
+
+\addtolength\headheight{12pt}
+\addtolength\parskip{.7ex}
+\setlength\parindent{0cm}
 
 \swapnumbers
 \declaretheoremstyle[headfont = \scshape, bodyfont = \normalfont, qed = \qedsymbol]{foag}
@@ -54,11 +59,13 @@
 \makeatother
 
 
+\newcommand\ball{\mathrm{B}}
 \newcommand\category[1]{\mathsf{#1}}
 \newcommand\identity{\mathrm{id}}
 
 \DeclareMathOperator\Image{Im}
 \DeclareMathOperator\Mor{Mor}
+\DeclareMathOperator\res{res}
 
 \title{Solutions to Foundations of Algebraic Geometry}
 \author{Pieter Belmans}
