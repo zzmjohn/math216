@@ -3,6 +3,7 @@
 \usepackage[leqno]{amsmath}
 \usepackage{amsthm}
 \usepackage{colonequals}
+\usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{thmtools}
 \usepackage{xspace}
@@ -16,6 +17,8 @@
 \addtolength\headheight{12pt}
 \addtolength\parskip{.7ex}
 \setlength\parindent{0cm}
+
+\setenumerate[1]{label = (\alph*), leftmargin = 18pt}
 
 \swapnumbers
 \declaretheoremstyle[headfont = \scshape, bodyfont = \normalfont, qed = \qedsymbol]{foag}
