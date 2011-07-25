@@ -127,6 +127,7 @@ There are no exercises in this section.
 \end{exercise}
 
 \begin{exercise} % TODO this feels very fishy
+  \label{exercise:23k}
   \begin{enumerate}
     \item As stated in~\autoref{exercise:23d}: giving a ring map~$A\to B$ is the same as giving~$B$ an~$A$\nobreakdash-algebra structure. So we can consider both~$B$ and~$M$ as~$A$\nobreakdash-modules.
 
@@ -204,9 +205,11 @@ There are no exercises in this section.
   \begin{equation}
     \begin{tikzpicture}[description/.style = {fill = white, inner sep = 2pt}, baseline=(current bounding  box.center)]
       \matrix (m) [matrix of math nodes, row sep = 3em, column sep = 3em, text height = 1.5ex, text depth = 0.25ex]
-      { X_1\times_Y X_2 & X_2 & X_2 \\
+      {
+        X_1\times_Y X_2 & X_2 & X_2 \\
         X_1 & Y & \\
-        X_1 & & Z \\ };
+        X_1 & & Z \\
+      };
       \draw[->] (m-1-1) edge (m-1-2)
                 (m-1-2) edge (m-1-3)
                 (m-1-3) edge (m-3-3)
@@ -220,4 +223,54 @@ There are no exercises in this section.
   \end{equation}
 
   By definition of~$X_1\times_Y X_2$ the maps to~$Y$ through~$X_1$ and~$X_2$ agree. So the composition with~$Y\to Z$ agrees as well. We can now put the fibered product~$X_1\times_Y X_2$ in the position of~$W$ for the definition of the fibered product~$X_1\times_Z X_2$, obtaining a unique or natural morphism~$X_1\times_Y X_2\to X_1\times_Z X_2$.
+\end{exercise}
+
+\begin{exercise} % TODO do this one
+  The magic diagram still feels like magic. I will come back to this exercise.
+\end{exercise}
+
+\begin{exercise}
+  Let's draw another picture.
+  \begin{equation}
+    \begin{tikzpicture}[description/.style = {fill = white, inner sep = 2pt}, baseline=(current bounding  box.center)]
+      \matrix (m) [matrix of math nodes, row sep = 3em, column sep = 3em, text height = 1.5ex, text depth = 0.25ex]
+      {
+        P' & & \\
+        & P & N \\
+        & M & \\
+      };
+      \path[->] (m-2-3) edge node[above] {$\nu'$} (m-1-1)
+                (m-3-2) edge node[auto] {$\mu'$} (m-1-1)
+                (m-2-3) edge node[auto] {$\nu$} (m-2-2)
+                (m-3-2) edge node[right] {$\mu$} (m-2-2);
+      \path[->, dashed] (m-2-2) edge node[description] {$\exists!$} (m-1-1);
+    \end{tikzpicture}
+  \end{equation}
+
+  When~$P=M\sqcup N$ we have obvious morphisms~$\mu$ and~$\nu$ which are the canonical injections. But~$\mu'$ and~$\nu'$ are uniquely determining~$P\to P'$ as exactly the right information is stored in~$P$.
+\end{exercise}
+
+\begin{exercise}
+  We check the axioms for the ring morphism~$b\mapsto b\otimes 1$:
+  \begin{description}
+    \item[additivity] By definition of the tensor product of two~$A$\nobreakdash-modules we obtain~$(b_1+b_2)\otimes c=b_1\otimes c+b_2\otimes c$, hence the map is additive.
+
+    \item[multiplicativity] By the definition of multiplication induced on~$B\otimes_A C$ in~\autoref{exercise:23k} we obtain~$(b_1b_2)\otimes 1=(b_1\otimes 1)(b_2\otimes 1)$.
+
+    \item[preservation of unity] By definition we have~$1\mapsto 1\otimes 1$ which acts as unity for the multiplication.
+  \end{description}
+
+  We have maps~$B\to B\otimes_A C$ and~$C\to B\otimes_A C$ by the previous observations. Now these maps agree by definition of~$\otimes_A$: the images of elements of~$A$ in either~$B$ or~$C$ can be moved back and forth after the map to~$B\otimes_A C$.
+
+  For any other ring~$A'$ equipped with maps~$f\colon B\to A'$ and~$g\colon C\to A'$ such that they agree when composed with~$A\to B$ and~$A\to C$ we have an obvious map~$B\otimes_A C\to A'$ by taking~$b\otimes c\mapsto f(b)g(c)$. As unity is preserved under ring morphisms, this makes everything commute. By the axioms of ring morphisms, this is the unique map making everything commute as this multiplicative structure of the map is imposed.
+\end{exercise}
+
+\begin{exercise}
+  Consider two maps~$g_1,g_2\colon Z\to X$ and two consecutive monomorphisms~$f_1\colon X\to Y_1$,~$f_2\colon Y_1\to Y_2$ such that~$f_2\circ f_1\circ g_1=f_2\circ f_1\circ g_2$, by associativity and~$f_2$ monomorphic we obtain~$f_1\circ g_1=f_1\circ g_2$ which by~$f_1$ monomorphic yields~$g_1=g_2$.
+\end{exercise}
+
+\begin{exercise}
+  If~$f\colon X\to Y$ is a monomorphism taking~$X$ as the fibered product proves its existence. The unique map~$Z\to X\times_Y X=X$ is given by~$g_1=g_2$, where~$g_1,g_2\colon Z\to X$.
+
+  Conversely, if the fibered product exists we have that~$f\circ g_1=f\circ g_2$ as these maps must agree. Now there is a \emph{unique} map~$Z\to X\times_Y X$ so we obtain~$g_1=g_2$ as~$g_1$ and~$g_2$ both equal the composition of this unique map with the equal projections~$X\times_Y X\to X$.
 \end{exercise}
