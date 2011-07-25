@@ -36,7 +36,7 @@ There are no exercises in this section.
 
 \begin{exercise}
   \label{exercise:23a}
-  Take~$A$ and~$B$ initial objects. As there exist (unique) morphisms~$A\to B$ and~$B\to A$, we can compose them, obtaining morphisms~$A\to A$ and~$B\to B$. But the identity is another candidate for this morphisms, so by uniqueness of the morphisms~$A$ and~$B$ are isomorphic.
+  Take~$A$ and~$B$ initial objects. As there exist (unique) morphisms~$A\to B$ and~$B\to A$ by definition of an initial object, we can compose them, obtaining morphisms~$A\to A$ and~$B\to B$. But the identity is another candidate for this morphisms, so by uniqueness of the morphisms~$A$ and~$B$ are isomorphic.
 
   The proof for final objects is completely the same.
 \end{exercise}
@@ -126,27 +126,39 @@ There are no exercises in this section.
   The construction exactly quotients those objects that correspond to the bilinearity of the morphisms that are considered. Therefore all morphisms~$M\times N\to T'$ split uniquely through~$T$.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} % TODO this feels very fishy
   \begin{enumerate}
-    \item Let's tediously check all module axioms. Take~$b_1,b_2\in B$ and~$b\otimes m,b'\otimes m'\in B\otimes_A M$. We have
+    \item As stated in~\autoref{exercise:23d}: giving a ring map~$A\to B$ is the same as giving~$B$ an~$A$\nobreakdash-algebra structure. So we can consider both~$B$ and~$M$ as~$A$\nobreakdash-modules.
+
+      We now use the fact that~$B$ is more than a module: it is an algebra. So we take by definition that~$B\otimes_A M$ interacts with scalars such that elements of~$B\setminus A$ are absorbed in the first factor, while scalar elements of~$A$ can (as by definition of the tensor product over~$A$) move around as we like.
+      
+      Let's tediously check all module axioms now. Take~$b_1,b_2\in B$ as scalars for the~$B$\nobreakdash-structure and~$b\otimes m,b'\otimes m'\in B\otimes_A M$ as $B$\nobreakdash-module elements. We have
       \begin{description}
-        \item[$r(x+y)=rx+ry$] Using the axioms of the tensor product we obtain
+        \item[$r(x+y)=rx+ry$:] This one is immediate.
+
+        \item[$(r+s)x=rx+sx$:] We manipulate:
           \begin{equation}
             \begin{aligned}
-              b_1(b\otimes m+b'\otimes m') &= b_1\left( (b+b')\otimes (m+m') \right) \\
-              &= \left( b_1(b+b') \right)\otimes(m+m') \\
-              &= (b_1b+b_1b')\otimes (m+m') \\
-              &= b_1b\otimes (m+m')+b_1(b'\otimes(m+m') \\
-              &= b\otimes b_1(m+m')+b'\otimes b_1(m+m') \\
-              &=
-            \end{aligned}
+              (b_1+b_2)(b\otimes m)&=(b_1+b_2)b\otimes m \\
+              &=(b_1b+b_2)\otimes m \\
+              &=b_1b\otimes m+b_2b\otimes m \\
+              &=b_1(b\otimes m)+b_2(b\otimes m)
+            \end{aligned}.
           \end{equation}
 
-        \item[$(r+s)x=rx+sx$] 
+        \item[$(rs)x=r(sx)$:] By definition of the~$B$\nobreakdash-module structure we obtain
+          \begin{equation}
+            (b_1b_2)(b\otimes m)=b_1b_2b\otimes m=b_1(b_2b\otimes m).
+          \end{equation}
 
-        \item[$(rs)x=r(sx)$] 
-
-        \item[$1_Rx=x$] 
+        \item[$1_Rx=x$:] We easily obtain
+          \begin{equation}
+            1_B(b\otimes m)=1_Bb\otimes m=b\otimes m.
+          \end{equation}
       \end{description}
+
+      The functiorality of~$\category{Mod}_A\to\category{Mod}_B$ follows from assigning to each morphism~$f\colon M_1\to M_2$ in the first category the map~$\identity\otimes f$ in the second.
+
+    \item Now both~$B$ and~$C$ carry the desired~$A$\nobreakdash-algebra structure necessary for this multiplication to hold and the result follows from the previous point.
   \end{enumerate}
 \end{exercise}
