@@ -414,3 +414,29 @@ There are no exercises in this section.
 
   Chasing the diagram in the other direction, through~$f^*\circ\tau_{A',B}$ we first obtain~$h(-_M)(-_N)$ and then end up with~$h(f(-_M))(-_N)$, hence equality. The rest is analogous, now you have to compose with the map~$g\colon B\to B'$.
 \end{exercise}
+
+\begin{exercise} % TODO prove adjointness
+  Let's take the equivalence relation described in the notes with \emph{pointwise addition}. Now we check the group axioms:
+  \begin{description}
+    \item[closure] taking~$(a,b)$ and~$(c,d)$ in~$S\times S$, the pointwise sum is~$(a+c,d+e)$ and both components are defined by the binary operation in the semigroup;
+    \item[associativity] again, the pointwise sum is associative by the associativity of the binary operation in the semigroup;
+    \item[identity] the element~$(s,s)$ for~$s\in S$ is the identity: all of them are identified by the equivalence relation and we have~$(a,b)\sim(a+s,b+s)$ because~$a+b+s+e=b+a+s+e$ as~$S$ is an \emph{abelian} semigroup;
+    \item[inverse element] the inverse element of~$(a,b)$ is given by~$(b,a)$: their sum is~$(a+b,b+a)$ which is a representative of the equivalence class of the identity.
+  \end{description}
+
+  The map~$S\to\groupification(S)$ is given by choosing a fixed element~$e$ and mapping~$s$ to~$\overline{(s,e)}$ in~$S\times S/{\sim}$.
+
+  The adjointness is still to come.
+\end{exercise}
+
+\begin{exercise}
+  By filling in~$\pi=\identity_S$ in the universal property defining groupification we easily see the unique morphism~$G\to G'$ is given by~$S\to G$.
+\end{exercise}
+
+\begin{exercise} % TODO prove adjointness
+  Because~$1\in S$ we have the inclusion of objects~$\category{Mod}_{S^{-1}A}\hookrightarrow\category{Mod}_A$ as every~$S^{-1}$\nobreakdash-module is an~$A$\nobreakdash-module using~$a\mapsto a/1$. The converse doesn't hold obviously.
+
+  Now the embedding is fully faithful because every~$A$\nobreakdash-module morphism~$M\to M'$ is an~$S^{-1}A$\nobreakdash-module morphism: the localization can occur either before or after the morphism by the corresponding linearity.
+
+  The adjointness is still to come.
+\end{exercise}
