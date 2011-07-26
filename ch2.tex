@@ -253,8 +253,7 @@ There are no exercises in this section.
 \begin{exercise}
   We check the axioms for the ring morphism~$b\mapsto b\otimes 1$:
   \begin{description}
-    \item[additivity] By definition of the tensor product of two~$A$\nobreakdash-modules we obtain~$(b_1+b_2)\otimes c=b_1\otimes c+b_2\otimes c$, hence the map is additive.
-
+    \item[additivity] By definition of the tensor product of two~$A$\nobreakdash-modules we obtain~$(b_1+b_2)\otimes c=b_1\otimes c+b_2\otimes c$, hence the map is additive.  
     \item[multiplicativity] By the definition of multiplication induced on~$B\otimes_A C$ in~\autoref{exercise:23k} we obtain~$(b_1b_2)\otimes 1=(b_1\otimes 1)(b_2\otimes 1)$.
 
     \item[preservation of unity] By definition we have~$1\mapsto 1\otimes 1$ which acts as unity for the multiplication.
@@ -270,9 +269,36 @@ There are no exercises in this section.
 \end{exercise}
 
 \begin{exercise}
+  \label{exercise:23v}
   If~$f\colon X\to Y$ is a monomorphism taking~$X$ as the fibered product proves its existence. The unique map~$Z\to X\times_Y X=X$ is given by~$g_1=g_2$, where~$g_1,g_2\colon Z\to X$.
 
   Conversely, if the fibered product exists we have that~$f\circ g_1=f\circ g_2$ as these maps must agree. Now there is a \emph{unique} map~$Z\to X\times_Y X$ so we obtain~$g_1=g_2$ as~$g_1$ and~$g_2$ both equal the composition of this unique map with the equal projections~$X\times_Y X\to X$.
 
   By putting~$X$ in the position for a map~$X\to X\times_Y X$ we obtain an induced isomorphism as we can use the identity map~$X\to X$ at both sides in the diagram.
+\end{exercise}
+
+\begin{exercise}
+  Using the magic diagram we obtain
+  \begin{equation}
+    \begin{tikzpicture}[description/.style = {fill = white, inner sep = 2pt}, baseline=(current bounding  box.center)]
+      \matrix (m) [matrix of math nodes, row sep = 3em, column sep = 3em, text height = 1.5ex, text depth = 0.25ex]
+      {
+        X_1\times_Z X_2 & & \\
+        & X_1\times_Y X_2 & X_1\times_Z X_2 \\
+        & Y & Y\times_Z Y\cong Y \\
+      };
+      \path[->] (m-1-1) edge (m-3-2)
+                (m-1-1) edge (m-2-3)
+                (m-2-2) edge (m-3-2)
+                (m-2-2) edge (m-2-3)
+                (m-3-2) edge (m-3-3)
+                (m-2-3) edge (m-3-3);
+      \path[->, dashed] (m-1-1) edge (m-2-2);
+    \end{tikzpicture}
+  \end{equation}
+  where we have~$Y\times_Z Y\cong Y$ by~\autoref{exercise:23v}. The isomorphism is immediate by the uniqueness of~$X_1\times_Z X_2\to X_1\times_Y X_2$.
+\end{exercise}
+
+\begin{exercise}
+  By plugging in~$C=A$ we get the candidate~$g\colonequals\mathrm{i}_A(\identity_A)$. 
 \end{exercise}
