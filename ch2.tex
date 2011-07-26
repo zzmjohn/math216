@@ -302,3 +302,61 @@ There are no exercises in this section.
 \begin{exercise}
   By plugging in~$C=A$ we get the candidate~$g\colonequals\mathrm{i}_A(\identity_A)$. 
 \end{exercise}
+
+
+\section{Limits and colimits}
+
+\begin{exercise}
+  As stated in the exercise the morphisms~$f_j$ are the obvious projection maps. The maps~$F(m)$ for all~$m\colon j\to k$ in~$\mathcal{I}$ commute with these projections by the identification~$F(m)(a_j)=a_k$.
+
+  Now take an object~$W$ such that the~$g_i\colon W\to A_i$ commute with all the~$F(m)$. Construct~$g\colon W\to\varprojlim_{\mathcal{I}}A_i$ by using he value~$g_i(w)$ for the~$i$th position of the direct limit. By demanding commutativity this map is necessarily unique.
+\end{exercise}
+
+\begin{exercise}
+  \label{exercise:23b}
+  \begin{enumerate}
+    \item The rational numbers~$\mathbb{Q}$ is the object that captures all of the information contained in the~$\frac{1}{n}\mathbb{Z}$. We define a morphism~$\frac{1}{n}\mathbb{Z}\to\frac{1}{m}\mathbb{Z}$ is~$n\divides m$, by~$\frac{z}{n}\mapsto\frac{(m/n)z}{m}$. The remark in the notes after~\autoref{exercise:23c} is helpful in this respect.
+
+    \item\label{enumerate:23b-b} Take subsets~$A_j$ and~$A_k$ of~$A$ such that~$m\colon A_j\hookrightarrow A_k$ is the obvious inclusion map (if it exists). The diagram becomes
+      \begin{equation}
+        \begin{tikzpicture}[description/.style = {fill = white, inner sep = 2pt}, baseline=(current bounding  box.center)]
+          \matrix (m) [matrix of math nodes, row sep = 3em, column sep = 3em, text height = 1.5ex, text depth = 0.25ex]
+          {
+            & \varinjlim_{\mathcal{I}}A_i \\
+            A_j & A_k \\
+          };
+          \path[->] (m-2-1) edge node[auto] {$f_j$} (m-1-2)
+                    (m-2-2) edge node[right] {$f_k$} (m-1-2);
+          \path[right hook->] (m-2-1) edge (m-2-2);
+        \end{tikzpicture}
+      \end{equation}
+      where~$\varinjlim_{\mathcal{I}}A_i$ should capture enough but no more of the information contained in the~$A_i$ in order to make maps out of it to compatible objects unique.
+
+      Therefore two different elements are mapped to different elements of the colimit, but they are identified for the inclusion maps. The union captures all of this information: we have the obvious inclusions~$f_i$, the~$F(m)$ are still the inclusion maps from the previous paragraph and as to maps out of~$\varinjlim_{\mathcal{I}}A_i$ to compatible objects: these are unique because the~$g_j$ define them uniquely.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  \label{exercise:23c}
+  Extending the answer to~\autoref{exercise:23b}\ref{enumerate:23b-b} we see that the maps out of~$\varinjlim_{\mathcal{I}}A_i$ are defined uniquely by this quotient of the disjoint union.
+\end{exercise}
+
+\begin{exercise} % TODO write answer
+  First the well-definedness:
+  \begin{description}
+    \item[addition] the pointwise addition is compatible with the construction because the maps are all~$A$\nobreakdash-module maps, hence the identification is preserved;
+    \item[scalar multiplication] the same reasoning holds.
+  \end{description}
+
+  And this construction serves as a colimit because two elements that get identified will have an equal image out of the colimit (\ie, just one choice) while the compatibility of the maps gives us the construction of the map~$\varinjlim_{\mathcal{I}}\to W$\footnote{You might have noticed it: I am not god at this kind of arguments. Please consult a good algebra textbook.}.
+\end{exercise}
+
+\begin{exercise}
+  The maps~$F(m)\colon\frac{1}{s_1}A\to\frac{1}{s_2}A$ where~$s_2=s_1s'$ are defined by~$\frac{1}{s_1}a\mapsto\frac{1}{s_2}s'a$. So an element in~$S^{-1}A$ which can be regarded as a fraction appears somewhere in the direct system and stays there by the integrality. The direct limit essentially captures all the information of the localization, for which integral domains are the most intuitive case.
+
+  In this more general case, the torsion will disappear.
+\end{exercise}
+
+\begin{exercise}
+  The diagram defining the colimit is now broken into several disjoint parts by lack of the filtered condition. The construction works for these parts and they are independent, hence these are not affected by the quotient of the direct sum.
+\end{exercise}
