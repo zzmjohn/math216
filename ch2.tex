@@ -341,7 +341,7 @@ There are no exercises in this section.
   Extending the answer to~\autoref{exercise:23b}\ref{enumerate:23b-b} we see that the maps out of~$\varinjlim_{\mathcal{I}}A_i$ are defined uniquely by this quotient of the disjoint union.
 \end{exercise}
 
-\begin{exercise} % TODO write answer
+\begin{exercise}
   First the well-definedness:
   \begin{description}
     \item[addition] the pointwise addition is compatible with the construction because the maps are all~$A$\nobreakdash-module maps, hence the identification is preserved;
@@ -359,4 +359,28 @@ There are no exercises in this section.
 
 \begin{exercise}
   The diagram defining the colimit is now broken into several disjoint parts by lack of the filtered condition. The construction works for these parts and they are independent, hence these are not affected by the quotient of the direct sum.
+\end{exercise}
+
+
+\section{Adjoints}
+
+\begin{exercise}
+  Extending the diagram given in~(2.5.0.2) we obtain
+  \begin{equation}
+    \begin{tikzpicture}[description/.style = {fill = white, inner sep = 2pt}, baseline=(current bounding  box.center)]
+      \matrix (m) [matrix of math nodes, row sep = 3em, column sep = 3em, text height = 1.5ex, text depth = 0.25ex]
+      {
+        \Mor_{\mathcal{B}}\left( F(A'),B \right) & \Mor_{\mathcal{B}}\left( F(A),B \right) & \Mor_{\mathcal{B}}\left( F(A),B' \right) \\
+        \Mor_{\mathcal{A}}\left( A',G(B) \right) & \Mor_{\mathcal{A}}\left( A,G(B) \right) & \Mor_{\mathcal{A}}\left( A,G(B') \right) \\
+      };
+      \path[->] (m-1-1) edge node[auto] {$Ff^*$} (m-1-2)
+                (m-1-2) edge node[auto] {$g^*$}  (m-1-3)
+                (m-2-1) edge node[auto] {$f^*$}  (m-2-2)
+                (m-2-2) edge node[auto] {$Gg^*$} (m-2-3)
+                (m-1-1) edge node[auto] {$\tau_{A',B}$} (m-2-1)
+                (m-1-2) edge node[auto] {$\tau_{A,B}$}  (m-2-2)
+                (m-1-3) edge node[auto] {$\tau_{A,B'}$} (m-2-3);
+    \end{tikzpicture}
+  \end{equation}
+  in an obvious way.
 \end{exercise}
