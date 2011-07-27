@@ -105,15 +105,16 @@ There are no exercises in this section.
 \end{exercise}
 
 \begin{exercise} % TODO expand / rewrite
+  \label{exercise:23h}
   That~$f\otimes\identity\colon M\otimes N\to M''\otimes N$ is still surjective is obvious.
 
   For the surjection of~$M'\otimes N$ onto the kernel of~$f\otimes\identity$ we have to prove that in
   \begin{equation}
-    M\otimes N\to (M\otimes N)/\Image((M'\to M)\otimes\identity)\to M''\otimes N,
+    M\otimes N\to (M\otimes N)/\image((M'\to M)\otimes\identity)\to M''\otimes N,
   \end{equation}
   the last morphism being the induced morphism from~$f\otimes\identity$ is invertible. Construct the induced~$\overline{\varphi}$ from
   \begin{equation}
-    \map{\varphi}{M''\otimes N}{(M\otimes N)/\Image((M'\to M)\otimes\identity)}{m''\otimes n}{m\otimes n+\Image((M'\to M)\otimes\identity)}
+    \map{\varphi}{M''\otimes N}{(M\otimes N)/\image((M'\to M)\otimes\identity)}{m''\otimes n}{m\otimes n+\image((M'\to M)\otimes\identity)}
   \end{equation}
   where~$m\in f^{-1}(m'')$ by surjectivity of~$f$. Now~$\varphi$ is well defined, bilinear and therefore extends to~$\overline{\varphi}$. Now the composition~$\overline{\varphi}\circ\overline{f\otimes\identity}$ is the identity, hence the induced morphism is invertible and we have obtained exactness.
 \end{exercise}
@@ -434,9 +435,52 @@ There are no exercises in this section.
 \end{exercise}
 
 \begin{exercise} % TODO prove adjointness
-  Because~$1\in S$ we have the inclusion of objects~$\category{Mod}_{S^{-1}A}\hookrightarrow\category{Mod}_A$ as every~$S^{-1}$\nobreakdash-module is an~$A$\nobreakdash-module using~$a\mapsto a/1$. The converse doesn't hold obviously.
+  Because by definition~$1\in S$ we have the desired inclusion of categories~$\category{Mod}_{S^{-1}A}\hookrightarrow\category{Mod}_A$ as every~$S^{-1}$\nobreakdash-module is an~$A$\nobreakdash-module using~$a\mapsto a/1$. The converse doesn't hold obviously.
 
-  Now the embedding is fully faithful because every~$A$\nobreakdash-module morphism~$M\to M'$ is an~$S^{-1}A$\nobreakdash-module morphism: the localization can occur either before or after the morphism by the corresponding linearity.
+  Now this embedding is fully faithful: every~$A$\nobreakdash-module morphism~$M\to M'$ is an~$S^{-1}A$\nobreakdash-module morphism: the localization can occur either before or after the morphism by the corresponding linearity.
 
   The adjointness is still to come.
+\end{exercise}
+
+
+\section{(Co-)kernels and exact sequences (an introduction to abelian categories)}
+
+\begin{exercise}
+  By the Freyd-Mitchell embedding theorem, we can diagram-chase elements. By the element-wise definition of~$\image f^i$ there is an injection~$\image f^i\hookrightarrow A^{i+1}$ and likewise the cokernel is \emph{defined as}~$A^{i+1}/\image f^i$, hence we immediately obtain the surjection in the second part of the diagram.
+
+  The~$i$th cohomology~$\homology^i(A^\bullet)$ is defined as~$\ker f^i/\image f^{i-1}$ which gives us the injection into~$\coker f^{i-1}$, defined as~$A^i/\image f^{i-1}$, by the injection~$\ker f^{i}\hookrightarrow A^i$. For the surjectivity of~$\coker f^{i-1}\to\image f^i$ we use the fact that it is a complex:~$f^i\circ f^{i-1}=0$.
+\end{exercise}
+
+\begin{exercise}
+  We first use the fact from linear algebra that for the exact sequence
+  \begin{equation}
+    0\to A^1\to A^2\to A^3\to 0
+  \end{equation}
+  where~$\dim A^2=\dim A^1+\dim A^3$.
+
+  Now by taking the long sequence apart and setting~$A^1\colonequals\image d^i=\ker d^{i+1}$ and likewise~$A^3\colonequals\image d^i=\ker d^{i+1}$ we can chain all these sums together and obtain the desired equality.
+\end{exercise}
+
+\begin{exercise}
+  The key insight is: \emph{positionwise}. The category~$\category{Com}_{\category{Mod}_A}$ is additive by imposing the positionwise (as in: each position in a complex) structures. The kernels and cokernels of maps of complexes are defined by putting the appropriate (co)kernels at each position. The additional axioms of an abelian category follow likewise.
+\end{exercise}
+
+\begin{exercise} % TODO expand
+  The truth lies in the commutativity of diagram~(2.6.4.5), but I have to come up with a good formulation.
+\end{exercise}
+
+\begin{exercise}
+  This is by breaking apart the short exact sequences and putting them back together equivalent to the definition.
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item 
+
+    \item See~\autoref{exercise:23h}.
+
+    \item 
+
+    \item 
+  \end{enumerate}
 \end{exercise}
