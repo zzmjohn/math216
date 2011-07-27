@@ -29,15 +29,9 @@
 
 \begin{exercise}
   \begin{enumerate}
-    \item If a function is differentiable, continuous or smooth in a point this notion extends to a small neighbourhood of that point. Hence for a covering we can glue the functions together.
-
-    \item Analogous.
-  \end{enumerate}
-\end{exercise}
-
-\begin{exercise}
-  \begin{enumerate}
     \item Such functions are defined in their points, if all the restrictions agree for a covering, the functions are obviously equal. The identity axiom is satisfied. But given a covering on which all restrictions agree we can just paste together a global function, hence the gluability axiom is satisfied~too.
+
+      Glueing functions preserves their extra properties: these are all defined in a neighbourhood of a point, hence valid in an open set and therefore lift to the global function.
 
     \item Analogous.
   \end{enumerate}
@@ -45,4 +39,26 @@
 
 \begin{exercise}
   The presheaf axioms are trivially satisfied, local functions restrict easily. The identity axiom is obvious too. For the gluability: observe that the compatibility boils down to defining a function on the \emph{connected components} of the covering and therefore is satisfied too.
+\end{exercise}
+
+\begin{exercise} % TODO do this
+  I should write a proper answer to this exercise, but I don't feel like it at the moment so for numbering purposes, there is this placeholder.
+\end{exercise}
+
+\begin{exercise} % TODO do this
+  I should write a proper answer to this exercise, but I don't feel like it at the moment so for numbering purposes, there is this placeholder.
+\end{exercise}
+
+\begin{exercise}
+  The presheaf axioms are satisfied because~$f$ is continuous hence the inverse~$f^{-1}$ maps open sets to open sets. The presheaf axioms are satisfied on the open sets in the domain of the map and the presheaf axioms for~$f_*\mathcal{F}$ are a subset (sketchy wording) of those for~$\mathcal{F}$.
+
+  The sheaf axioms are satisfied because inverse maps are compatible with unions and intersections. As for the presheaf axioms: everything is transferred.
+\end{exercise}
+
+\begin{exercise}
+  Using the definition of the direct limit and the construction as described in~\autoref{exercise:23c} we see that \emph{less} relations have to be quotiented, as the direct system defining~$(f_*\mathcal{F})_y$ is contained in the direct system defining~$\mathcal{F}_p$.
+\end{exercise}
+
+\begin{exercise}
+  As germs in the stalk~$\mathcal{F}_x$ are equivalence classes of functions defined in the neighbourhood modulo equality on a (smaller) neighbourhood, we can define the~$\mathcal{O}_{X,x}$\nobreakdash-module structure on~$\mathcal{F}_x$ by defining it on representatives of these classes. By commutativity of~(3.2.12.1) this is well defined. The actual checking of the structure is straight-forward and familiar.
 \end{exercise}
