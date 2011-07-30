@@ -15,7 +15,7 @@
   A functor assigns an object in~$\category{Sets}$ to every object in the category of open sets of the topological space~$X$. As an inclusion of sets is reflected as a morphism of the two open sets involved, this is translated to a morphism of sets in the codomain category\footnote{I have never seen this terminology, don't shoot me if I missed some more obvious wording.}. Identities are preserved by functors, so~$\res_{U,U}=\identity_{\mathcal{F}(U)}$ by definition. For the commutativity of restriction maps, this is by the \emph{contravariance} of the functor.
 \end{exercise}
 
-\begin{exercise} % TODO finish this
+\begin{exercise}
   \begin{enumerate}
     \item The presheaf axioms are (trivially) true by restriction of functions. Yet it is not a sheaf, take~$x\mapsto|x|$. On~$\ball(0,n)$ the function is bounded by~$n$, we can take~$\mathbb{C}=\bigcup_{n\in\mathbb{N}}\ball(0,n)$ and glue together a function on all of~$\mathbb{C}$ yet it is not bounded hence not a section over~$\mathcal{C}$ of this sheaf.
 
@@ -40,6 +40,7 @@
 \end{exercise}
 
 \begin{exercise}
+  \label{exercise:32d}
   \begin{enumerate}
     \item Such functions are defined in their points, if all the restrictions agree for a covering, the functions are obviously equal. The identity axiom is satisfied. But given a covering on which all restrictions agree we can just paste together a global function, hence the gluability axiom is satisfied~too.
 
@@ -91,19 +92,31 @@
   To every sheaf~$\mathcal{F}$ in~$\category{Sets}_X$ there is a (unique) associated sheaf~$f_*(\mathcal{F})$ in~$\category{Sets}_Y$. Obviously~$f_*(\identity_\mathcal{F})=\identity_{f_*(\mathcal{F})}$ and we have~$f_*(h\circ g)$ with~$g\colon\mathcal{F}\to\mathcal{G}$ and~$h\colon\mathcal{G}\to\mathcal{H}$ by applying this to every open set~$U$.
 \end{exercise}
 
-\begin{exercise} % TODO finish
-  The presheaf axioms are easy: the restriction map is just restriction of a function~$f\colon\mathcal{F}(U)\to\mathcal{G}(U)$ to~$f|_V\colon\mathcal{F}(V)\to\mathcal{G}(V)$ in~$\SheafHom(\mathcal{F},\mathcal{G})(V)$ for~$V\subseteq U$. The identity axiom is satisfied because a morphism of sheaves~$f\colon\mathcal{F}\to\mathcal{G}$ is defined on open sets, so if the restrictions of the~$\SheafHom$\nobreakdash-sheaf are equal the global sections are equal too. 
+\begin{exercise}
+  The presheaf axioms are easy: the associated restriction is just the obvious restriction of a function~$f\colon\mathcal{F}(U)\to\mathcal{G}(U)$ to~$f|_V\colon\mathcal{F}(V)\to\mathcal{G}(V)$ in~$\SheafHom(\mathcal{F},\mathcal{G})(V)$ for~$V\subseteq U$.
 
-  As for the rest, I am now doing the next exercises.
+  The identity axiom for~$\SheafHom$ follows from the separatedness of~$\mathcal{G}$. Take a cover~$(U_i)_i$ of~$U$, any open subset~$V$ of~$U$ and a section~$s\in\mathcal{F}(V)$. Now we have~$f(V)(s)|_{U_i\cap V}=g(V)(s)|_{U_i\cap V}$ (which are elements of the sheaf~$\mathcal{G}$) for the covering~$(U_i\cap V)_i$ of~$V$. As~$\mathcal{G}$ is assumed to be separated we obtain~$f(V)(s)=g(V)(s)$. As this holds for any~$V$ and all sections~$s$, we have that~$\SheafHom$ is a separated presheaf.
+
+  Now consider a family~$(f_i)_i$ of compatible sections (which are morphisms of sets of sections) on a cover~$(U_i)_i$ of~$U$. Like the case of the identity axiom, we consider~$V\subseteq U$ open and~$s\in\mathcal{F}(V)$. This gives
+  \begin{equation}
+    f_i(U_i\cap V)(s|_{U_i\cap V})\in\mathcal{G}(U_i\cap V).
+  \end{equation}
+  Now glue together~$f(V)(s)$ in~$\mathcal{G}(V)$. This defines a morphism of presheaves, by separatedness of~$\mathcal{G}$ (the compatibility of restrictions is induced in a unique way).
+
+  If~$\mathcal{G}$ is a sheaf of abelian groups, morphisms~$\mathcal{F}\to\mathcal{G}$ carry a natural group structure, by pointwise addition. The neutral element is the zero map.
 \end{exercise}
 
 \begin{exercise} % TODO expand
   \begin{enumerate}
-    \item By definition~$\SheafHom(\underline{\left\{ p \right\}},\mathcal{F})=\Mor(\underline{\left\{ p \right\}}|_U=\left\{ p \right\},\mathcal{F}|_U)$. As there is a unique map~$f_x\colon\left\{ p \right\}\to\mathcal{F}|_U:p\mapsto x$ for every element of~$x\in\mathcal{F}|_U$ (hence a bijection of sets) we have obtained an isomorphism of sheaves.
+    \item By definition
+      \begin{equation}
+        \SheafHom\left( \underline{\left\{ p \right\}},\mathcal{F} \right)=\Mor\left( \underline{\left\{ p \right\}}|_U=\left\{ p \right\},\mathcal{F}|_U \right).
+      \end{equation}
+      As there is a unique map~$f_x\colon\left\{ p \right\}\to\mathcal{F}|_U:p\mapsto x$ for every element of~$x\in\mathcal{F}|_U$ (hence a bijection of sets) we have obtained an isomorphism of sheaves.
 
-    \item\label{enumerate:exercise-33d-b} Analogously we now have a map~$f_g\colon\mathbb{Z}\to\mathcal{F}|_U$ such that~$1\mapsto g$ for every~$g\in\mathcal{F}|_U$. The image of~$f_g$ is the cyclic group~$\langle g\rangle$. As the abelian group structure of~$\SheafHom_{\category{Ab}_X}$ is defined pointwise, the maps~$f_g$ inherit the structure encoded in~$\mathcal{F}$ for every~$U$.
+    \item\label{enumerate:exercise-33d-b} Analogously we now have a map~$f_g\colon\underline{\mathbb{Z}}(U)=\mathbb{Z}\to\mathcal{F}(U)$ such that~$1\mapsto g$, defined for every~$g\in\mathcal{F}(U)$. Now take sections~$g$ and~$g'\in\mathcal{F}(U)$. We obtain~$f_{g+g'}=f_g+f_{g'}$ because the image of~$1$ defines everything (\ie,~$\mathbb{Z}$ is the free group generated by~$\left\{ 1 \right\}$).
 
-    \item Analogous to~\ref{enumerate:exercise-33d-b}, but I should try to phrase this in a nice way.
+    \item Analogous to~\ref{enumerate:exercise-33d-b}.
   \end{enumerate}
 \end{exercise}
 
@@ -142,5 +155,5 @@
 \section{Properties determined at the level of stalks, and sheafification}
 
 \begin{exercise}
-  Assume it is not injective, \ie, there are sections~$f$ and~$g$ in~$\mathcal{F}(U)$ such that the product of their values in the stalks in~$U$ is equal. Every value arises by construction from a section on a neighbourhood, hence for the intersection of these neighbourhoods the restrictions of~$f$ and~$g$ have to agree. Now use the identity axiom because~$\mathcal{F}$ is a separated presheaf, which leads to~$f=g$, a contradiction.
+  Assume the map is not injective, \ie, there are sections~$f$ and~$g$ in~$\mathcal{F}(U)$ such that the product of their values in the stalks in~$U$ is equal. Every value arises by construction from a section on a neighbourhood, hence for the intersection of these neighbourhoods the restrictions of~$f$ and~$g$ have to agree. Now use the identity axiom because~$\mathcal{F}$ is a separated presheaf, which leads to~$f=g$, a contradiction.
 \end{exercise}
