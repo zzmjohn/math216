@@ -17,9 +17,21 @@
 
 \begin{exercise} % TODO finish this
   \begin{enumerate}
-    \item The presheaf axioms are (trivially) true by restriction of functions. Yet it is not a sheaf, take~$x\mapsto|x|$. On~$\ball(0,n)$ the function is bounded by~$n$, we can take~$\mathbb{C}=\bigcup_{n\in\mathbb{N}}\ball(0,n)$ and glue together a function on all of~$\mathbb{C}$ yet it is not bounded.
+    \item The presheaf axioms are (trivially) true by restriction of functions. Yet it is not a sheaf, take~$x\mapsto|x|$. On~$\ball(0,n)$ the function is bounded by~$n$, we can take~$\mathbb{C}=\bigcup_{n\in\mathbb{N}}\ball(0,n)$ and glue together a function on all of~$\mathbb{C}$ yet it is not bounded hence not a section over~$\mathcal{C}$ of this sheaf.
 
-    \item For some reason I am struggling with wording a good answer, yet it boils down to branch points and some open set that is not simply connected.
+    \item Inspired by \href{http://math.stackexchange.com/questions/38423/presheaf-which-is-not-a-sheaf-holomorphic-functions-which-admit-a-holomorphic}{\texttt{math.stackexcange.com}} (and my complex analysis course) the idea is to circle a zero, ending up with a multiple-valued function, which is clearly not a section of the sheaf.
+
+      Take~$f\colon z\mapsto z$ on the annulus~$U=\left\{ 1-\epsilon<|z|<1+\epsilon \right\}$. By the Cauchy integral formula we have
+      \begin{equation}
+        \oint_{\mathclap{|z|=1}}\frac{g'(z)}{g(z)}\dd z\in2\pi\mathrm{i}\mathbb{Z}
+      \end{equation}
+      where~$g$ is holomorphic, without zeroes on the unit circle. Hence for~$f$ we obtain~$2\pi\mathrm{i}$.
+
+      But if~$f=g^2$ we would obtain
+      \begin{equation}
+        \oint_{\mathclap{|z|=1}}\frac{f'(z)}{f(z)}\dd z=2\oint_{\mathclap{|z|=1}}\frac{g'(z)}{g(z)}\dd z\in4\pi\mathrm{i}\mathbb{Z}
+      \end{equation}
+      which is a contradiction on the value we previously obtained. Now~$f$ can be patched together from holomorphic functions that admit a square root, as long as the open set doesn't wind around zero: take open balls to cover~$U$ and we're done.
   \end{enumerate}
 \end{exercise}
 
@@ -38,15 +50,20 @@
 \end{exercise}
 
 \begin{exercise}
-  The presheaf axioms are trivially satisfied, local functions restrict easily. The identity axiom is obvious too. For the gluability: observe that the compatibility boils down to defining a function on the \emph{connected components} of the covering and therefore is satisfied too.
+  The presheaf axioms are trivially satisfied, local functions restrict easily. The identity axiom is obvious too. For the gluability: observe that the compatibility boils down to defining a function on the \emph{connected components} of the covering because sections are constant if there is a non-empty intersection and therefore this axiom is satisfied too.
 \end{exercise}
 
-\begin{exercise} % TODO do this
-  I should write a proper answer to this exercise, but I don't feel like it at the moment so for numbering purposes, there is this placeholder.
+\begin{exercise}
+  \label{exercise:32f}
+ The key idea is ``a function is continuous'' if and only if ``locally a function is continuous''. Hence restriction of continuous functions is well defined and the commutativity of the restriction triangle is immediate. Now for the identity axiom: equality of functions is checked in the points and as all restrictions agree the global sections must agree. Likewise we can check the gluability axiom.
 \end{exercise}
 
-\begin{exercise} % TODO do this
-  I should write a proper answer to this exercise, but I don't feel like it at the moment so for numbering purposes, there is this placeholder.
+\begin{exercise}
+  \begin{enumerate}
+    \item The sections of~$f$ over~$U$ form a subset of the sections of the sheaf from~\autoref{exercise:32f} over~$U$. The restrictions are trivially fine, the identity axiom follows from the previous exercise too and gluability is obviously true as well as~$f\circ s=\identity|_U$ holds for the pointwise glueing of a section.
+
+    \item There is nothing to add to the arguments of~\autoref{exercise:32d}. The set of sections carries a natural pointwise abelian group structure.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
