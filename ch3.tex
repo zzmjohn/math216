@@ -62,3 +62,61 @@
 \begin{exercise}
   As germs in the stalk~$\mathcal{F}_x$ are equivalence classes of functions defined in the neighbourhood modulo equality on a (smaller) neighbourhood, we can define the~$\mathcal{O}_{X,x}$\nobreakdash-module structure on~$\mathcal{F}_x$ by defining it on representatives of these classes. By commutativity of~(3.2.12.1) this is well defined. The actual checking of the structure is straight-forward and familiar.
 \end{exercise}
+
+
+\section{Morphisms of presheaves and sheaves}
+
+\begin{exercise}
+  The induced morphism is given by applying the morphism to representatives of equivalence classes of the stalks. By commutativity of the diagram in the definition of (pre)sheaf morphisms this is correct.
+\end{exercise}
+
+\begin{exercise}
+  To every sheaf~$\mathcal{F}$ in~$\category{Sets}_X$ there is a (unique) associated sheaf~$f_*(\mathcal{F})$ in~$\category{Sets}_Y$. Obviously~$f_*(\identity_\mathcal{F})=\identity_{f_*(\mathcal{F})}$ and we have~$f_*(h\circ g)$ with~$g\colon\mathcal{F}\to\mathcal{G}$ and~$h\colon\mathcal{G}\to\mathcal{H}$ by applying this to every open set~$U$.
+\end{exercise}
+
+\begin{exercise} % TODO finish
+  The presheaf axioms are easy: the restriction map is just restriction of a function~$f\colon\mathcal{F}(U)\to\mathcal{G}(U)$ to~$f|_V\colon\mathcal{F}(V)\to\mathcal{G}(V)$ in~$\SheafHom(\mathcal{F},\mathcal{G})(V)$ for~$V\subseteq U$. The identity axiom is satisfied because a morphism of sheaves~$f\colon\mathcal{F}\to\mathcal{G}$ is defined on open sets, so if the restrictions of the~$\SheafHom$\nobreakdash-sheaf are equal the global sections are equal too. 
+
+  As for the rest, I am now doing the next exercises.
+\end{exercise}
+
+\begin{exercise} % TODO expand
+  \begin{enumerate}
+    \item By definition~$\SheafHom(\underline{\left\{ p \right\}},\mathcal{F})=\Mor(\underline{\left\{ p \right\}}|_U=\left\{ p \right\},\mathcal{F}|_U)$. As there is a unique map~$f_x\colon\left\{ p \right\}\to\mathcal{F}|_U:p\mapsto x$ for every element of~$x\in\mathcal{F}|_U$ (hence a bijection of sets) we have obtained an isomorphism of sheaves.
+
+    \item\label{enumerate:exercise-33d-b} Analogously we now have a map~$f_g\colon\mathbb{Z}\to\mathcal{F}|_U$ such that~$1\mapsto g$ for every~$g\in\mathcal{F}|_U$. The image of~$f_g$ is the cyclic group~$\langle g\rangle$. As the abelian group structure of~$\SheafHom_{\category{Ab}_X}$ is defined pointwise, the maps~$f_g$ inherit the structure encoded in~$\mathcal{F}$ for every~$U$.
+
+    \item Analogous to~\ref{enumerate:exercise-33d-b}, but I should try to phrase this in a nice way.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  In the situation of the diagram as given in the notes, we have injective maps~$\ker_{\textrm{pre}}\phi(V)\to\mathcal{F}(V)$ for every~$V$ open. Define~$\res^{\ker}_{V,U}$ by mapping~$g\in\ker_{\textrm{pre}}\phi(V)$ to the preimage of~$\res_{V,U}$ under the injection maps. As both maps are injective, this preimage is a well-defined element. We have found our induced restriction map. It is unique by commutativity of the square and the injectivity: any two maps such that~$f\circ g_1=f\circ g_2$ imply~$g_1=g_2$.
+
+  We now check the conditions required for a presheaf. Obviously~$\res^{\ker}_{U,U}$ is the identity map and the commutativity of the restriction triangle follows from the uniqueness of the restriction maps.
+\end{exercise}
+
+\begin{exercise} % TODO draw diagram and finish exercise
+  I promise to draw this diagram first thing tomorrow, right now I'm not in the mood.
+\end{exercise}
+
+\begin{exercise}
+  \label{exercise:33g}
+  A morphism between sheaves is defined as a morphism of the category over which we are considering the sheaf for \emph{every} open set. We now restrict ourselves to a specific open set, hence the morphisms (the only nontrivial part of a functor's definition) are preserved. 
+
+  This functor is exact because the exactness of a sequence of sheaves if checked over open sets by the fact that all abelian-categorical notions are verified ``open set by open set''. And we only consider a specific open set, over which the exactness is given.
+\end{exercise}
+
+\begin{exercise}
+  The abelian-categorial notions are verified ``open set by open set'', hence we consider a family of functors as in~\autoref{exercise:33g} indexed by all open sets in the topology on~$X$. The equivalence follows.
+\end{exercise}
+
+\begin{exercise} % TODO finish
+  The uniqueness of the induced restriction map and the injectivity for every open set give us the identity axiom: if all restrictions are equal we can just move everything one morphism to the right and identify things there. The same holds for the gluability axiom: given local~$f_i$, we move everything using the injectivity to the sheaf's object~$\mathcal{F}(U_i)$ and lift things to~$\mathcal{F}(U)$. Now we don't now yet that this section lives in~$\ker_{\textrm{pre}}\phi$, but if it wouldn't, there needs to be an open set for which the image under~$\phi$ is nonzero. % TODO
+\end{exercise}
+
+\begin{exercise} % TODO finish
+  The inclusion~$\underline{\mathbb{Z}}\hookrightarrow\mathcal{O}_X$ is obvious: constant functions are holomorphic. Under the mapping~$f\mapsto\exp(2\pi\mathrm{i}f$ the kernel are exactly those functions such that~$\exp(2\pi\mathrm{i}f)$ is~$1$ (the neutral element in this multiplicative group). This is true for all constant integer functions:~$2\pi\mathrm{i}n$ evaluates under exponentiation to~$1$. As~$\mathcal{F}$ is the presheaf of functions admitting a holomorphic logarithm, they must come from the exponentiation of a holomorphic function contained in~$\mathcal{O}_X$ and we have the surjectivity of~$\mathcal{O}_X\twoheadrightarrow\mathcal{F}$.
+
+  The failure of the sheaf axioms is for tomorrow.
+\end{exercise}
