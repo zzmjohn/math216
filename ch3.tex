@@ -186,3 +186,33 @@
 
   By compatibility of restrictions, this is well-defined.
 \end{exercise}
+
+\begin{exercise}
+  \label{exercise:34d}
+  It is actually enough for~$\mathcal{G}$ to be a monopresheaf.
+
+  Take any section~$s\in\mathcal{F}(U)$. We have~$f(s)$ and~$g(s)$ in~$\mathcal{G}(U)$. Because the stalk morphisms are equal, \ie, ~$f_x(s_x)=g_x(s_x)$, we can take a representative of these, obtaining an open set~$U_x$ for each~$x\in U$ where the restrictions of the sheaf morphisms agree. Using the identity axiom we have~$f(s)=g(s)$.
+\end{exercise}
+
+\begin{exercise}
+  Using the diagram in~(3.4.3.1) we have injectivity for both vertical arrows by~\autoref{exercise:34d}. Now let~$f\colon\mathcal{F}\to\mathcal{G}$ be an isomorphism of sheaves. The induced stalk morphisms are by construction isomorphisms.
+
+  For the other direction, assume all stalk morphisms are isomorphisms. The map~$\mathcal{F}(U)\to\mathcal{G}(U)$ must be injective: if there are two sections of~$\mathcal{F}$ over~$U$ mapped by~$f$ to the same section of~$\mathcal{G}$ (over~$U$) we get a contradiction on the commutativity of the square. Chasing the diagram the other way around is through an injection and a product of isomorphisms, which is injective, a contradiction. Now for the surjectivity of~$\mathcal{F}(U)\to\mathcal{G}(U)$: take a section~$g\in\mathcal{G}(U)$, consider the corresponding compatible germs, take the inverse isomorphism to the product of stalks of~$\mathcal{F}$ and use gluability to construct a section of~$\mathcal{F}$ over~$U$ which is mapped to~$g$.
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item Consider~$X=\left\{ x,y \right\}$ equipped with the discrete topology and let~$\mathcal{F}(\left\{ x \right\}=0$, $\mathcal{F}(\left\{ y \right\})=0$ and~$\mathcal{F}(X)=\mathbb{Z}$. The stalks are the trivial group, the product is still the trivial group, so for~$U=X$ we get a contradiction on the injectivity.
+
+    \item After a little detour to (pre)sheaves of abelian groups, back to (pre)sheaves of sets. Take~$\mathcal{F}\colonequals\underline{\left\{ p \right\}}$ and~$\mathcal{G}$ such that
+      \begin{equation}
+        \begin{aligned}
+          \mathcal{G}(\left\{ x \right\})=\mathcal{G}(\left\{ y \right\})&=\left\{ p \right\}    \\
+          \mathcal{G}(\left\{ x,y \right\})&=\left\{ p,p' \right\}
+        \end{aligned}.
+      \end{equation}
+      We have~$\phi_1(X)(p)=p$ and~$\phi_2(X)(p)=p'$ as possible candidates, yet the induced stalk morphisms are equal.
+
+    \item Using the same setup: we have trivial stalk isomorphisms, yet the presheaves are not isomorphic.
+  \end{enumerate}
+\end{exercise}
