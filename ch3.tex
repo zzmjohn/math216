@@ -218,7 +218,59 @@
 \end{exercise}
 
 \begin{exercise}
+  \label{exercise:34g}
   The standard argument: take~$\mathcal{F}_1^{\sh}$ and~$\mathcal{F}_2^{\sh}$ both sheafifications of~$\mathcal{F}$. There are unique morphisms~$\mathcal{F}_1^{\sh}\to\mathcal{F}_2^{\sh}$ and~$\mathcal{F}_2^{\sh}\to\mathcal{F}_1^{\sh}$. Now we can compose these. But if I give you the identity map between both compositions, you have to agree we've obtained isomorphisms, right?
 
   If~$\mathcal{F}$ already is a sheaf, setting~$\mathcal{F}^{\sh}\colonequals\mathcal{F}$ satisfies the conditions of sheafification if~$\sh=\identity$: the map~$f$ equals~$g$ and is therefore uniquely defined.
+\end{exercise}
+
+\begin{exercise}
+  \label{exercise:34h}
+  The definition of~$\mathcal{F}^{\sh}(U)$ takes the compatible germs as sections. The identity axiom follows by definition of the sections: sections are defined by pointwise products. The gluability axiom is by definition of the compatibility: if the restrictions agree just taking the product gives us a global section.
+\end{exercise}
+
+\begin{exercise}
+  Define
+  \begin{equation}
+    \sh\colon
+    \begin{array}{ccc}
+      \mathcal{F}&\to&\mathcal{F}^{\sh} \\
+      s&\mapsto&\prod_{x\in U}s_x
+    \end{array}.
+  \end{equation}
+\end{exercise}
+
+\begin{exercise}
+  First of all, by~\autoref{exercise:34h}~$\mathcal{F}^{\sh}$ is a sheaf.
+
+  Using~\autoref{exercise:34d} we get the unique induced morphism: take the induced stalk morphisms as the morphisms for~$g$. In case it's not clear how this induces a sheaf morphism (instead of a bunch of stalk morphisms), use~\autoref{exercise:34g}.
+\end{exercise}
+
+\begin{exercise}
+  Take~$\mathcal{G}$ in the definition of the sheafification to be~$\mathcal{G}^{\sh}$, the map~$g$ being~$\sh\circ\phi$. Now we get the induced~$f=\phi^{\sh}$ on the sheafifications.
+
+  The sheafification preserves the identity, the induced~$\phi^{\sh}$ is unique by definition, but~$\identity_{\mathcal{F}^{\sh}}$ does the trick. And it agrees with compositions by the uniqueness: the composition of the sheafified morphisms serves as the candidate for the sheafification of the composition.
+\end{exercise}
+
+\begin{exercise} % TODO do this
+  I'm not a category-lover, but I'll do this exercise later.
+\end{exercise}
+
+\begin{exercise} % TODO Alternative answer using Remark 3.6.3
+  Stalks are defined as equivalence classes of sections on open sets. The definition of the sheafification requires the existence of a section inducing stalks. The stalks of the sheafification are the canonical projections. So we get a morphism from the stalks of the presheaf to the stalks of the sheaf by mapping~$\overline{(s_U,U)}_x$ to~$s_{U,x}$ which is by construction a stalk of the sheafification. This mapping is bijective: surjectivity follows from construction of~$\sh$ where a product of stalks arises from a section over a certain open set, take this section and set as representative of the equivalence class of a stalk in the presheaf as preimage. For the injectivity: consider two germs in~$x$ such that their image is equal in the stalk of~$\mathcal{F}^{\sh}$, by the previous observation we could've picked the inducing compatible germs with their corresponding open set as the representative of the stalk of the presheaf, which makes the two germs equal.
+\end{exercise}
+
+\begin{exercise}
+  Following the order of implications as indicated by the hints:
+  \begin{description}
+    \item[$\textnormal{(a)}\Rightarrow\textnormal{(c)}$] A morphism of sheaves is given by a morphism of sets for each set of sections over an open set~$U$. If~$\phi$ is a monomorphism we have~$g_1=g_2$, but this condition can be applied for each open set (using the indicator sheaf if you want), obtaining the injectivity of~$\phi(U)$.
+
+    \item[$\textnormal{(c)}\Rightarrow\textnormal{(b)}$] Take germs~$t_1$ and~$t_2$ in~$\mathcal{F}_x$ such that~$\phi_x(t_1)=\phi_x(t_2)$. Consider their representatives, there must be an open set contained in the intersection of the two open sets representing the germs such that their image is equal. But the injectivity on the level of open sets gives us that these representatives must be equal, hence the germs are too.
+
+    \item[$\textnormal{(b)}\Rightarrow\textnormal{(a)}$] Morphisms are determined by their stalks using~\autoref{exercise:34d}, if all the stalk morphisms are injective we can use the pointwise monomorphisms to determine~$g_1=g_2$ in the definition of a monomorphism.
+  \end{description}
+
+  These proofs hold for monopresheaves as well.
+
+  Observe that~$\textnormal{(a)}\Rightarrow\textnormal{(b)}\Rightarrow\textnormal{(c)}\Rightarrow\textnormal{(a)}$ is possible as well using the definition of compatible germs and their correspondence with sheaves. For this chain of implications to be easy to proof we do need the sheaf condition though.
 \end{exercise}
