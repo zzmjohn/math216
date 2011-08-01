@@ -261,6 +261,7 @@
 \end{exercise}
 
 \begin{exercise}
+  \label{exercise:34n}
   Following the order of implications as indicated by the hints:
   \begin{description}
     \item[$\textnormal{(a)}\Rightarrow\textnormal{(c)}$] A morphism of sheaves is given by a morphism of sets for each set of sections over an open set~$U$. If~$\phi$ is a monomorphism we have~$g_1=g_2$, but this condition can be applied for each open set (using the indicator sheaf if you want), obtaining the injectivity of~$\phi(U)$.
@@ -280,7 +281,72 @@
 \end{exercise}
 
 \begin{exercise}
+  \label{exercise:34p}
   The map~$\exp\colon\mathcal{O}_X\to\mathcal{O}_X^*$ is an epimorphism: at the level of the stalks we have for a nowhere zero~$g$ that~$g$ is nowhere zero in a neighbourhood of~$x$, which can be taken as a representative and which admits a local logarithm.
 
   But if we take a open neighbourhood of zero and puncture it there (or more general: any open set that is not contractible) we can construct a function that is nowhere zero, but is not in the image of~$\exp$: the winding number causes the function~$z\mapsto z$ to be an section of~$\mathcal{O}_X^*$ but there is no section in~$\mathcal{O}_X$ mapping to it.
+\end{exercise}
+
+
+\section{Sheaves of abelian groups, and~\texorpdfstring{$\mathcal{O}_X$}{Ox}-modules, form abelian categories}
+
+\begin{exercise}
+  \label{exercise:35a}
+  We have~$g\in(\ker(\mathcal{F}\to\mathcal{G}))_x$ if and only if there is an open set~$U$ and a section~$s\in\ker(\mathcal{F}\to\mathcal{G})(U)$ representing the germ~$g$. But this is equivalent to~$s\in\mathcal{F}(U)$ being mapped to~$(\mathcal{F}\to\mathcal{G})(U)(s)=0$, or~$(\mathcal{F}_x\to\mathcal{G}_x)(g)=0$.
+\end{exercise}
+
+\begin{exercise}
+  \label{exercise:35b}
+  Analogous to~\autoref{exercise:35a}.
+\end{exercise}
+
+\begin{exercise} % TODO expand and draw
+  The image presheaf is defined by~$\image^{\pre}\phi(U)=\phi(U)(\mathcal{F}(U))$. 
+\end{exercise}
+
+\begin{exercise}
+  Take~$0\to\mathcal{F}\to\mathcal{G}\to\mathcal{H}\to 0$ an exact sequence of sheaves. By~\autoref{exercise:35a} and~\autoref{exercise:35b} and the relation of the image to the cokernel (is it already a fact at this moment or am I using facts from Tennison which are unknown as of now?) the sequence of the stalks is exact too.
+\end{exercise}
+
+\begin{exercise}
+  \label{exercise:35e}
+  By~\autoref{exercise:34n} the left-exactness is checked on open sets, hence we obtain the result.
+
+  Using~\autoref{exercise:34p} we easily obtain an example, patching together a function on an open set that is not simply connected.
+\end{exercise}
+
+\begin{exercise}
+  Take~$U=f^{-1}(V)$, then we have by~\autoref{exercise:35e} the exactness of
+  \begin{equation}
+    0\to\mathcal{F}(U)\to\mathcal{G}(U)\to\mathcal{H}(U)
+  \end{equation}
+  which implies by definition of the pushforward the exactness of
+  \begin{equation}
+    0\to f_*\mathcal{F}(V)\to f_*\mathcal{G}(V)\to f_*\mathcal{H}(V).
+  \end{equation}
+\end{exercise}
+
+\begin{exercise}
+  By~\autoref{exercise:35e} we can take~$\Hom$ for each abelian group of sections and using the exactness of that sequence we obtain by left-exactness of~$\Hom$ the result.
+\end{exercise}
+
+\begin{exercise} % TODO do this
+  This is boring but important. I should do this.
+\end{exercise}
+
+\begin{exercise} % TODO expand?
+  \begin{enumerate}
+    \item We want it to be defined using the tensor-$\Hom$ adjunction we saw in~\autoref{exercise:25d}. The presheaf tensor product of two~$\mathcal{O}_X$-modules~$\mathcal{F}$ and~$\mathcal{G}$ is defined by
+      \begin{equation}
+        \mathcal{F}\otimes_{\mathcal{O}_X}\mathcal{G}(U)\colonequals\mathcal{F}(U)\otimes_{\mathcal{O}_X(U)}\mathcal{G}(U).
+      \end{equation}
+      and the tensor product of two~$\mathcal{O}_X$\nobreakdash-modules is the sheafification of this construction.
+
+      This construction satisfies the adjointness by the adjunction of modules.
+
+    \item Because stalks are preserved by sheafification, we have to show that the tensor product of stalks is the stalk of the presheaf tensor product. Using the fact that the tensor product commutes with direct limits (can we?), we obtain
+      \begin{equation}
+        \left( \mathcal{F}\otimes_{\mathcal{O}_X}\mathcal{G} \right)_x=\varinjlim_{U\ni x}\mathcal{F}(U)\otimes_{\mathcal{O}_X(U)}\mathcal{G}(U)=\mathcal{F}_x\otimes_{\mathcal{O}_{X,x}}\mathcal{G}_x.
+      \end{equation}
+  \end{enumerate}
 \end{exercise}
