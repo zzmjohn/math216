@@ -20,7 +20,7 @@
     \item The presheaf axioms are (trivially) true by restriction of functions. Yet it is not a sheaf, take~$x\mapsto|x|$. On~$\ball(0,n)$ the function is bounded by~$n$, we can take~$\mathbb{C}=\bigcup_{n\in\mathbb{N}}\ball(0,n)$ and glue together a function on all of~$\mathbb{C}$ yet it is not bounded hence not a section over~$\mathcal{C}$ of this sheaf.
 
     \item Inspired by \href{http://math.stackexchange.com/questions/38423/presheaf-which-is-not-a-sheaf-holomorphic-functions-which-admit-a-holomorphic}{\texttt{math.stackexcange.com}} (and my complex analysis course) the idea is to circle a zero, ending up with a multiple-valued function, which is clearly not a section of the sheaf.
-
+n
       Take~$f\colon z\mapsto z$ on the annulus~$U=\left\{ 1-\epsilon<|z|<1+\epsilon \right\}$. By the Cauchy integral formula we have
       \begin{equation}
         \oint_{\mathclap{|z|=1}}\frac{g'(z)}{g(z)}\dd z\in2\pi\mathrm{i}\mathbb{Z}
@@ -74,7 +74,7 @@
 \end{exercise}
 
 \begin{exercise}
-  Using the definition of the direct limit and the construction as described in~\autoref{exercise:23c} we see that \emph{less} relations have to be quotiented, as the direct system defining~$(f_*\mathcal{F})_y$ is contained in the direct system defining~$\mathcal{F}_p$.
+  Using the definition of the direct limit and the construction as described in~\autoref{exercise:24c} we see that \emph{less} relations have to be quotiented, as the direct system defining~$(f_*\mathcal{F})_y$ is contained in the direct system defining~$\mathcal{F}_p$.
 \end{exercise}
 
 \begin{exercise}
@@ -305,6 +305,7 @@
 \end{exercise}
 
 \begin{exercise}
+  \label{exercise:35d}
   Take~$0\to\mathcal{F}\to\mathcal{G}\to\mathcal{H}\to 0$ an exact sequence of sheaves. By~\autoref{exercise:35a} and~\autoref{exercise:35b} and the relation of the image to the cokernel (is it already a fact at this moment or am I using facts from Tennison which are unknown as of now?) the sequence of the stalks is exact too.
 \end{exercise}
 
@@ -348,5 +349,63 @@
       \begin{equation}
         \left( \mathcal{F}\otimes_{\mathcal{O}_X}\mathcal{G} \right)_x=\varinjlim_{U\ni x}\mathcal{F}(U)\otimes_{\mathcal{O}_X(U)}\mathcal{G}(U)=\mathcal{F}_x\otimes_{\mathcal{O}_{X,x}}\mathcal{G}_x.
       \end{equation}
+  \end{enumerate}
+\end{exercise}
+
+
+\section{The inverse image sheaf}
+
+\begin{exercise}
+  The induced restriction morphism follows from the construction using the direct limit: if~$U_1\subseteq U_2\subseteq X$ are open sets the direct system~$V\supseteq f(U_2)$ is contained in the direct system~$V\supseteq f(U_1)$ as~$f(U_1)\subseteq f(U_2)$. Using the construction of~\autoref{exercise:24c} we get the restriction by the canonical injection of coproducts.
+
+  For the commutativity of the restriction triangle the same idea holds.
+\end{exercise}
+
+\begin{exercise} % TODO finish
+  Let~$f\colon f^{-1}\mathcal{G}\to\mathcal{F}\in\Mor_X(f^{-1}\mathcal{G},\mathcal{F}$. We can apply the pushforward to both sheaves, resulting in~$f_*f^{-1}\mathcal{G}\to f_*\mathcal{F}$. But by categorical definition in~3.6.1 we get a canonical map~$\mathcal{G}\to f_*f^{-1}\mathcal{G}$ and we can compose these to get~$\mathcal{G}\to f_*\mathcal{F}$.
+
+  The inverse map is given analogously by taking~$g\colon\mathcal{G}\to f_*\mathcal{F}$, applying the inverse image~$f^{-1}$ and composing it with the natural~$f^{-1}f_*\mathcal{F}\to\mathcal{F}$.
+
+  As for the bijectivity of the map, I don't have a clue (yet).
+\end{exercise}
+
+\begin{exercise}
+  We're interested in the stalks of the presheaf as they are preserved by sheafification. We obtain
+  \begin{equation}
+    \begin{aligned}
+      (f^{-1}\mathcal{G})_p&=\varinjlim_{U\ni p}f^{-1}\mathcal{G}(U) \\
+      &=\varinjlim_{U\ni p}\varinjlim_{V\supseteq f(U)}\mathcal{G}(V) \\
+      &=\varinjlim_{f(U)\ni f(p)}\varinjlim_{V\supseteq f(U)}\mathcal{G}(V) \\
+      &=\lim_{V\ni f(p)}\mathcal{G}(V)=\mathcal{G}_q.
+    \end{aligned}
+  \end{equation}
+\end{exercise}
+
+\begin{exercise}
+  \label{exercise:36c}
+  In the construction of sections over~$V$ of the inverse image presheaf we have a direct system of open sets containing~$\mathrm{i}(V)=$. But the open set~$V$ appears in this system, hence we have~$i^{-1}\mathcal{G}(V)=\mathcal{G}(V)$ where~$V\subseteq U$.
+\end{exercise}
+
+\begin{exercise}
+  An exact sequence of sheaves of abelian groups on~$Y$ is transformed in an exact sequence of abelian groups by considering the stalks using~\autoref{exercise:35d}. Now consider the stalks at~$q=f(p)$, these are by~\autoref{exercise:36c} isomorphic to the stalk of the inverse images in~$p$. Now the inverse image is sheafified using these stalks, hence the inverse image sequence is exact.
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item If~$y\in Z$, then~$i^{-1}(U)=Z\cap U$ where~$y\in U$ open. Now~$(i_*\mathcal{F})_y$ is defined as the direct system of the~$U\cap Z$ because~$U\cap Z$ is open in the closed subspace~$Z$. Therefore~$(i_*\mathcal{F})_y=\mathcal{F}_y$ in this case. For~$y\notin Z$ we have by definition the one element-set as the stalk.
+
+    \item As~$\Supp\mathcal{G}\subset Z$ the inverse image functor preserves all stalks by~\autoref{exercise:36c}. Now we use the previous observation to obtain the isomorphism.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item If~$y\in U$ then the stalk at~$y$ is determined by the direct system of open sets containing~$y$. Because we are working with sheaves we can cut off a part of the system on the left: compatibility ensures that the smaller direct system still defines the same stalk. Now if~$y\notin U$ we have that all sections over open sets containing~$y$ are zero by definition.
+
+    \item Exactness is checked at the stalks. These stalks are either all zero, or correspond to the stalks of an exact sequence of sheaves on the open subspace, which are exact by~\autoref{exercise:35d}.
+
+    \item The inverse image functor~$i^{-1}$ defines the sheaf on~$U$ with stalks~$\mathcal{G}_p$ for~$p\in U$. Now the extension by zero sends this to~$\mathcal{G}|_U$, hence the inclusion.
+
+    \item This follows from the previous observations and I should write a more decent answer.
   \end{enumerate}
 \end{exercise}
