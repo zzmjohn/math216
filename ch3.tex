@@ -392,7 +392,7 @@ n
 
 \begin{exercise}
   \begin{enumerate}
-    \item If~$y\in Z$, then~$i^{-1}(U)=Z\cap U$ where~$y\in U$ open. Now~$(i_*\mathcal{F})_y$ is defined as the direct system of the~$U\cap Z$ because~$U\cap Z$ is open in the closed subspace~$Z$. Therefore~$(i_*\mathcal{F})_y=\mathcal{F}_y$ in this case. For~$y\notin Z$ we have by definition the one element-set as the stalk.
+    \item If~$y\in Z$, then~$i^{-1}(U)=Z\cap U$ where~$y\in U$ open. Now the stalk~$(i_*\mathcal{F})_y$ is defined as the direct system of the~$U\cap Z$ because~$U\cap Z$ is open in the closed subspace~$Z$. Therefore~$(i_*\mathcal{F})_y=\mathcal{F}_y$ in this case. For~$y\notin Z$ we have by definition the one element-set as the stalk.
 
     \item As~$\Supp\mathcal{G}\subset Z$ the inverse image functor preserves all stalks by~\autoref{exercise:36c}. Now we use the previous observation to obtain the isomorphism.
   \end{enumerate}
@@ -408,4 +408,34 @@ n
 
     \item This follows from the previous observations and I should write a more decent answer.
   \end{enumerate}
+\end{exercise}
+
+
+\section{Recovering sheaves from a ``sheaf on a base''}
+
+\begin{exercise}
+  We have enough information to determine the stalk at~$p$: we can drop the unions as the only interesting information is present in the open sets containing the point.
+\end{exercise}
+
+\begin{exercise} % TODO expand
+  \label{exercise:37b}
+  An element of~$\mathcal{F}(B)$ is given by~$(f_p\in F_p)_{p\in B}$ where we can take~$p\in B=B$ such that~$s_q=f_q$ for~$q\in B$. But~$F_p=\varinjlim F(B_i)$, such that the germ~$s_q=f_q$ for all~$q\in B$.
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item Use the fact that sheaves on a base correspond uniquely to their corresponding sheaves up to unique isomorphisms: what happens in the stalks didn't change, so the induced morphisms of sheaves on a base still completely determines the morphism of sheaves.
+
+    \item The morphism of sheaves on a base induces morphisms of stalks, which induce a morphism of the induced sheaves.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  By the hint: take a base of open sets consisting of open sets completely contained in an element of the cover. Arbitrary open sets are obviously unions of these.
+
+  We can now define the stalks of~$\mathcal{F}$: the sheaves on the~$(U_i)_i$ determine the sheaf on a base~$F$ by the cocycle condition which provides the compatibility of the base. Now we have obtained our induced sheaf.
+\end{exercise}
+
+\begin{exercise} % TODO find answer
+  It might be unimportant, but I would like to answer it. Unfortunately I fail to do so.
 \end{exercise}
