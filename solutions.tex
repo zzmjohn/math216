@@ -1,11 +1,12 @@
 \documentclass[oneside, openany]{memoir}
+% hyperref must come first
+\usepackage{hyperref}
 \usepackage{amsfonts}
 \usepackage[leqno]{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{colonequals}
 \usepackage{enumitem}
-\usepackage{hyperref}
 \usepackage{mathabx}
 \usepackage{mathtools}
 \usepackage{thmtools}
@@ -33,7 +34,7 @@
 \swapnumbers
 \declaretheoremstyle[headfont = \scshape, bodyfont = \normalfont, qed = \qedsymbol]{foag}
 \declaretheorem[style = foag, numberwithin = section]{exercise}
-\renewcommand{\theexercise}{\textbf{\arabic{chapter}.\arabic{section}.\Alph{exercise}}}
+\renewcommand{\theexercise}{{\normalfont\textbf{\arabic{chapter}.\arabic{section}.\Alph{exercise}}}}
 
 \newcommand\foreign[1]{\emph{#1}}
 \newcommand\eg{\foreign{e.g.}}
@@ -78,6 +79,7 @@
 \newcommand\identity{\mathrm{id}}
 \newcommand\projection{\pi}
 
+\DeclareMathOperator\alg{alg}
 \DeclareMathOperator\coker{coker}
 \DeclareMathOperator\Hom{Hom}
 \DeclareMathOperator\homology{H}
@@ -87,6 +89,7 @@
 \DeclareMathOperator\res{res}
 \DeclareMathOperator\sh{sh}
 \DeclareMathOperator\SheafHom{\mathcal{H}om}
+\DeclareMathOperator\Spec{Spec}
 \DeclareMathOperator\Supp{Supp}
 
 \title{Solutions to Foundations of Algebraic Geometry}
