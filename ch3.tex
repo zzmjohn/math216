@@ -20,7 +20,7 @@
     \item The presheaf axioms are (trivially) true by restriction of functions. Yet it is not a sheaf, take~$x\mapsto|x|$. On~$\ball(0,n)$ the function is bounded by~$n$, we can take~$\mathbb{C}=\bigcup_{n\in\mathbb{N}}\ball(0,n)$ and glue together a function on all of~$\mathbb{C}$ yet it is not bounded hence not a section over~$\mathcal{C}$ of this sheaf.
 
     \item Inspired by \href{http://math.stackexchange.com/questions/38423/presheaf-which-is-not-a-sheaf-holomorphic-functions-which-admit-a-holomorphic}{\texttt{math.stackexcange.com}} (and my complex analysis course) the idea is to circle a zero, ending up with a multiple-valued function, which is clearly not a section of the sheaf.
-n
+      
       Take~$f\colon z\mapsto z$ on the annulus~$U=\left\{ 1-\epsilon<|z|<1+\epsilon \right\}$. By the Cauchy integral formula we have
       \begin{equation}
         \oint_{\mathclap{|z|=1}}\frac{g'(z)}{g(z)}\dd z\in2\pi\mathrm{i}\mathbb{Z}
@@ -89,7 +89,7 @@ n
 \end{exercise}
 
 \begin{exercise}
-  To every sheaf~$\mathcal{F}$ in~$\category{Sets}_X$ there is a (unique) associated sheaf~$f_*(\mathcal{F})$ in~$\category{Sets}_Y$. Obviously~$f_*(\identity_\mathcal{F})=\identity_{f_*(\mathcal{F})}$ and we have~$f_*(h\circ g)$ with~$g\colon\mathcal{F}\to\mathcal{G}$ and~$h\colon\mathcal{G}\to\mathcal{H}$ by applying this to every open set~$U$.
+  To every sheaf~$\mathcal{F}$ in~$\category{Sets}_X$ there is a (unique) associated sheaf~$f_*\mathcal{F}$ in~$\category{Sets}_Y$. Obviously~$f_*(\identity_\mathcal{F})=\identity_{f_*(\mathcal{F})}$ and we have~$f_*(h\circ g)$ with~$g\colon\mathcal{F}\to\mathcal{G}$ and~$h\colon\mathcal{G}\to\mathcal{H}$ by applying this to every open set~$U$.
 \end{exercise}
 
 \begin{exercise}

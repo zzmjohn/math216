@@ -7,7 +7,7 @@ There are no exercises in this section.
 
 \begin{exercise}
   \begin{enumerate}
-    \item The elements of the group(oid) correspond to the morphisms. As every morphism is an isomorphism, we can only compose morphisms on the same object. Now in case of a single object, all axioms for a group are satisfied, as isomorphisms lead to inverse elements.
+    \item The elements of the group(oid) correspond to the category's morphisms. As every morphism is an isomorphism, we can only compose morphisms on the same object. Now in case of a single object, all axioms for a group are satisfied, as isomorphisms lead to inverse elements.
 
     \item Take the category of a group and copy the unique object, together with all its morphisms. Voil\`a, a groupoid.
 
@@ -36,7 +36,7 @@ There are no exercises in this section.
 
 \begin{exercise}
   \label{exercise:23a}
-  Take~$A$ and~$B$ initial objects. As there exist (unique) morphisms~$A\to B$ and~$B\to A$ by definition of an initial object, we can compose them, obtaining morphisms~$A\to A$ and~$B\to B$. But the identity is another candidate for this morphisms, so by uniqueness of the morphisms~$A$ and~$B$ are isomorphic.
+  Take~$A$ and~$B$ initial objects. By definition of an initial object have (unique) morphisms~$A\to B$ and~$B\to A$, we can compose them, obtaining morphisms~$A\to A$ and~$B\to B$. But the identity is another candidate for this morphisms, so by uniqueness of the morphisms~$A$ and~$B$ are isomorphic.
 
   The proof for final objects is completely the same.
 \end{exercise}
@@ -62,7 +62,7 @@ There are no exercises in this section.
 
 \begin{exercise}
   \label{exercise:23d}
-  The~$A$\nobreakdash-algebra~$S^{-1}A$ is a member of this category: an element~$s\in S$ is a unit as it is inverted by~$1/s$. It is furthermore initial among these algebras because the unique morphism~$\overline{\varphi}\colon S^{-1}A\to B$ is given by~$\overline{\varphi}(r/s)=\varphi(r)\varphi(s)^{-1}$ where~$\varphi\colon A\to B$ is the structure map.
+  The~$A$\nobreakdash-algebra~$S^{-1}A$ is a member of this category: an element of the multiplicative subset~$s\in S$ is a unit as it is inverted by~$1/s$. It is furthermore initial among these algebras because the unique morphism~$\overline{\varphi}\colon S^{-1}A\to B$ is given by~$\overline{\varphi}(r/s)=\varphi(r)\varphi(s)^{-1}$ where~$\varphi\colon A\to B$ is the structure map.
 
   Now this morphism~$\overline{\varphi}$ is unique because if~$\psi$ would be another morphism extending~$\mathrm{i}\colon A\to S^{-1}A$ we'd find
   \begin{equation}
@@ -159,7 +159,7 @@ There are no exercises in this section.
           \end{equation}
       \end{description}
 
-      The functiorality of~$\category{Mod}_A\to\category{Mod}_B$ follows from assigning to each morphism~$f\colon M_1\to M_2$ in the first category the map~$\identity\otimes f$ in the second.
+      The functorality of the mapping~$\category{Mod}_A\to\category{Mod}_B$ follows from assigning to each morphism~$f\colon M_1\to M_2$ in the first category the map~$\identity\otimes f$ in the second.
 
     \item Now both~$B$ and~$C$ carry the desired~$A$\nobreakdash-algebra structure necessary for this multiplication to hold and the result follows from the previous point.
   \end{enumerate}
@@ -254,7 +254,11 @@ There are no exercises in this section.
 \begin{exercise}
   We check the axioms for the ring morphism~$b\mapsto b\otimes 1$:
   \begin{description}
-    \item[additivity] By definition of the tensor product of two~$A$\nobreakdash-modules we obtain~$(b_1+b_2)\otimes c=b_1\otimes c+b_2\otimes c$, hence the map is additive.  
+    \item[additivity] By definition of the tensor product of two~$A$\nobreakdash-modules we obtain
+      \begin{equation}
+        (b_1+b_2)\otimes c=b_1\otimes c+b_2\otimes c,
+      \end{equation}
+      hence the map is additive.  
     \item[multiplicativity] By the definition of multiplication induced on~$B\otimes_A C$ in~\autoref{exercise:23k} we obtain~$(b_1b_2)\otimes 1=(b_1\otimes 1)(b_2\otimes 1)$.
 
     \item[preservation of unity] By definition we have~$1\mapsto 1\otimes 1$ which acts as unity for the multiplication.
@@ -266,7 +270,7 @@ There are no exercises in this section.
 \end{exercise}
 
 \begin{exercise}
-  Consider two maps~$g_1,g_2\colon Z\to X$ and two consecutive monomorphisms~$f_1\colon X\to Y_1$,~$f_2\colon Y_1\to Y_2$ such that~$f_2\circ f_1\circ g_1=f_2\circ f_1\circ g_2$, by associativity and~$f_2$ monomorphic we obtain~$f_1\circ g_1=f_1\circ g_2$ which by~$f_1$ monomorphic yields~$g_1=g_2$.
+  Consider two maps~$g_1,g_2\colon Z\to X$ and two consecutive mono\-morphisms~$f_1\colon X\to Y_1$,~$f_2\colon Y_1\to Y_2$ such that~$f_2\circ f_1\circ g_1=f_2\circ f_1\circ g_2$, by associativity and~$f_2$ monomorphic we obtain~$f_1\circ g_1=f_1\circ g_2$ which by~$f_1$ monomorphic yields~$g_1=g_2$.
 \end{exercise}
 
 \begin{exercise}
