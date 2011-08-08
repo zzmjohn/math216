@@ -51,6 +51,7 @@
 \end{exercise}
 
 \begin{exercise}
+  \label{exercise:42g}
   I have used this fact in~\autoref{exercise:42a}\ref{enumerate:42a-a}. It boils down to
   \begin{equation}
     A/J\cong (A/I)/(J/I) 
@@ -59,5 +60,71 @@
 \end{exercise}
 
 \begin{exercise} % TODO rewrite this
+  \label{exercise:42h}
   I have used this fact in~\autoref{exercise:42a}\ref{enumerate:42a-b}. A prime ideal of~$A$ that contains an element of~$S$ will the whole become~$S^{-1}A$ under localization. A prime ideal of~$A$ disjoint of~$S$ remains prime because the product~$(p_1/s_1)(p_2/s_2)$ is in the prime ideal if and only if~$(p_1p_2)/(s_1s_2)$ is in the prime ideal, but we can multiply with~$s_1s_2$ as this is by multiplicativity of~$S$ not a member of the prime ideal. Now we have reduced it to~$p_1p_2$ in the prime ideal.
+\end{exercise}
+
+\begin{exercise} % TODO do this
+  I haven't figured it out yet.
+\end{exercise}
+
+\begin{exercise}
+  Assume~$b_1b_2\in\phi^{-1}(\mathfrak{p})$, we have
+  \begin{equation}
+    \phi(b_1b_2)=\phi(b_1)\phi(b_2)\in\phi\left( \phi^{-1}(\mathfrak{p}) \right)=\mathfrak{p},
+  \end{equation}
+  hence~$\phi(b_1)$ or~$\phi(b_2)$ as~$\phi(\phi^{-1}(\mathfrak{p}))=\mathfrak{p}$ is a prime ideal in~$A$. We obtain that~$\phi^{-1}(\phi(b_1))=b_1$ or~$\phi^{-1}(\phi(b_2))=b_2$ must be an element of~$\phi^{-1}(\mathfrak{p})$.
+\end{exercise}
+
+\begin{exercise}
+  \label{exercise:42k}
+  \begin{enumerate}
+    \item\label{enumerate:42k-a} Using~\autoref{exercise:42g} everything is already clear: the primes of~$A$ containing~$I$ form a subset of~$\Spec A$ and~$\phi^{-1}$ is an inclusion-preserving bijection, giving us the suggested picture.
+
+    \item Using~\autoref{exercise:42h} everything is analogous.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  The fiber of~$a\in\mathbb{C}$ corresponds to the preimage of the prime ideal (in this case: maximal ideal) defining~$a$, \ie, $(x-a)$. This obviously gives us~$y^2-a=(y-\sqrt{a})(y+\sqrt{a})$, hence the result.
+\end{exercise}
+
+\begin{exercise} % TODO is it?
+  \begin{enumerate}
+    \item This is a restatement of~\autoref{exercise:42k}\ref{enumerate:42k-a}.
+
+    \item The Nullstellensatz gives us that all maximal ideals (\ie, points) of~$\mathbb{C}^n$ are exactly the ideals of the form~$(x_1-a_1,\ldots,x_m-a_m)$, which by~$\phi$ are mapped to the corresponding points of~$\mathbb{C}^n$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise} % TODO fix this
+  In the notation of~\autoref{exercise:42k}\ref{enumerate:42k-a} we have~$I=(x_1,\ldots,x_n)$ and~$B$ being~$\mathbb{Z}[x_1,\ldots,x_n]$. A point of~$\mathbb{A}_{\mathbb{F}_p}^n$ corresponds to a polynomial in~$n$~variables that is irreducible over~$\mathbb{F}_p$, which lies in the fiber over~$(p)$ because it is contained in the image of the induced ring map.
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item We have that every prime ideal contains all nilpotents: if~$c$ is a nilpotent such that~$c^n=0$, we immediately find that~$c$ is an element of the prime ideal. The bijection is between primes of~$A/I$ and primes of~$A$ containing~$I$, but this latter set contains all primes, hence there is a bijection of the underlying sets.
+
+    \item Let's check the axioms. The sum of two nilpotents is again a nilpotent: take~$x$ and~$y$ nilpotents such that~$x^n=y^m=0$, we easily obtain
+      \begin{equation}
+        (x+y)^{n+m}=\sum_{i=0}^{n+m}\binom{n+m}{i}x^iy^{n+m-i}
+      \end{equation}
+      such that there always is a vanishing factor present in the expansion. Closed under multiplication is obviously true too: we have~$(bx)^n=b^nx^n=0$ for~$b\in B$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise} % TODO copy
+  I have seen this exercise in my Commutative algebra course. It might be a good idea to state it here as well.
+\end{exercise}
+
+\begin{exercise} % TODO do this
+  I fail to find a decent argument.
+\end{exercise}
+
+\begin{exercise}
+  A polynomial~$f\in k[x]$ corresponds to~$\sum_{k=0}^na_kx^k$. Now considering it over~$k[x,\epsilon]/(\epsilon^2)$ and ``evaluating'' it at~$x+\epsilon$ we find
+  \begin{equation}
+    f(x+\epsilon)=\sum_{k=0}^na_k(x+\epsilon)^k=\sum_{k=0}^na_k\left( x^n+nx^{n-1}\epsilon \right)
+  \end{equation}
+  because every term containing~$\epsilon^2$ is gone. If we move the first term of the inner sum to the left-hand side and dividing both sides by~$\epsilon$ (which isn't really possible, but for the sake of argument we can assume this), we see the fact~$(x^n)'=nx^{n-1}$.
 \end{exercise}
