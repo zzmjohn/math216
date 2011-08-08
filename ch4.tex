@@ -102,10 +102,11 @@
 \end{exercise}
 
 \begin{exercise}
+  \label{exercise:42o}
   \begin{enumerate}
     \item We have that every prime ideal contains all nilpotents: if~$c$ is a nilpotent such that~$c^n=0$, we immediately find that~$c$ is an element of the prime ideal. The bijection is between primes of~$A/I$ and primes of~$A$ containing~$I$, but this latter set contains all primes, hence there is a bijection of the underlying sets.
 
-    \item Let's check the axioms. The sum of two nilpotents is again a nilpotent: take~$x$ and~$y$ nilpotents such that~$x^n=y^m=0$, we easily obtain
+    \item\label{enumerate:42o-b} Let's check the axioms. The sum of two nilpotents is again a nilpotent: take~$x$ and~$y$ nilpotents such that~$x^n=y^m=0$, we easily obtain
       \begin{equation}
         (x+y)^{n+m}=\sum_{i=0}^{n+m}\binom{n+m}{i}x^iy^{n+m-i}
       \end{equation}
@@ -133,3 +134,55 @@
 \section{Visualing schemes I: generic points}
 
 There are no exercises in this section.
+
+
+\section{The underlying topological space of an affine scheme}
+
+\begin{exercise}
+  The~$x$\nobreakdash-axis corresponds to the ideal~$(y,z)$. This ideal contains the ideal~$(xy,yz)$, hence we have the inclusion of the axis in the vanishing set.
+\end{exercise}
+
+\begin{exercise}
+  We have the obvious inclusion~$S\subseteq(S)$, so for the vanishing sets we have the opposite inclusion:
+  \begin{equation}
+    \vanishing{V}(S)=\left\{ [\mathfrak{p}]\in\Spec A\,|\, S\subseteq\mathfrak{p} \right\}\supseteq\left\{ [\mathfrak{p}]\in\Spec A\,|\, (S)\subseteq\mathfrak{p} \right\}=\vanishing\left( (S) \right).
+  \end{equation}
+  But if we take an element of the left-hand side, \ie, a prime ideal such that $S\subseteq\mathfrak{p}$ we can take an element of the generated ideal~$(S)$ and see that it is contained in~$\mathfrak{p}$ by the axioms of an ideal. I might have wasted too much words on this exercise.
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item We need to find vanishing sets such that their complements are~$\emptyset$ and~$\Spec A$. The vanishing set~$\vanishing(A)$ contains all of~$A$, hence its complement is empty. On the other hand,~$\vanishing(\left\{ 0 \right\})$ contains all prime ideals of~$A$, hence equals~$\Spec A$.
+
+    \item This equality is obvious: for a point to be contained in the intersection, it must be contained in all ideals~$(I_i)_i$, but that means it is contained in the vanishing set of the sum of the ideals because this contains exactly all those elements.
+
+    \item We obviously have~$\vanishing(I_1)\cup\vanishing(I_2)\subseteq\vanishing(I_1I_2)$ because~$I_1I_2\subseteq I_1,I_2$.
+
+      For the other direction, consider~$\mathfrak{p}\in\Spec A\setminus(\vanishing(I_1)\cup\vanishing(I_2))$. That means there exist~$f\in I_1\setminus\mathfrak{p}$ and~$g\in I_2\setminus\mathfrak{p}$ such that~$fg\notin\mathfrak{p}$. But~$fg\in I_1I_2$, so~$\mathfrak{p}\nsupseteq I_1I_2$ so the other inclusion is proved.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise} % TODO better wording
+  \label{exercise:44d}
+  The fact that~$\sqrt{I}$ is an ideal is a restatement of~\autoref{exercise:42o}\ref{enumerate:42o-b}.
+  
+  Because~$I\subseteq\sqrt{I}$ we obviously have~$\vanishing(\sqrt{I})\subseteq\vanishing(I)$, so let's take~$\mathfrak{p}$ in the right-hand side. As~$\mathfrak{p}$ is prime and by definition of the radical of an ideal we only consider powers of elements, we have the opposite inclusion.
+
+  The fact that~$\sqrt{\sqrt{I}}=\sqrt{I}$ follows from consecutive exponentiation. And if~$f^m\in\mathfrak{p}$ for some~$m$ we have~$f\in\mathfrak{p}$ by primeness.
+\end{exercise}
+
+\begin{exercise}
+  Consider the scenario of two ideals, hence we wish to prove
+  \begin{equation}
+    \sqrt{I\cap J}=\sqrt{I}\cap\sqrt{J}.
+  \end{equation}
+  Because taking the radical preserves inclusion we have the inclusion from left to right as~$I\cap J\subseteq I,J$ and therefore~$\sqrt{I\cap J}\subseteq\sqrt{I},\sqrt{J}$ so~$\sqrt{I\cap J}\subseteq\sqrt{I}\cap\sqrt{J}$.
+  
+  Now take~$x\in\sqrt{I}\cap\sqrt{J}$, there must exist an~$n$ such that~$x^n\in\sqrt{I}$ and~$m$ such that~$x^m\in\sqrt{J}$. But now~$x^{n+m}\in I\cap J$, so~$x\in\sqrt{I\cap J}$.
+
+  The general result follows by induction.
+\end{exercise}
+
+\begin{exercise}
+  Perform it on~$A/I$. The ideal~$I$ is sent to~$0$ under the quotient map, hence the nilradical~$\nil(A/I)$ is the intersection of all prime ideals containing~$I$, but this corresponds to~$\sqrt{I}$ in~$A$.
+\end{exercise}
