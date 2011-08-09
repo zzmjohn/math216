@@ -35,6 +35,7 @@
 \end{exercise}
 
 \begin{exercise}
+  \label{exercise:42d}
   Suppose~$\mathfrak{p}$ is a prime ideal that is not a principal ideal. Take two essential generators~$f(x,y)$ and~$g(x,y)$ (\ie, with not all factors of one contained in the other). This must be possible because otherwise we wouldn't have a principal ideal: one can be written as a product of the other with a polynomial containing the missing factors. Now because~$\mathfrak{p}$ is prime we can remove all common factors.
 
   By applying the Euclidean algorithm in~$\mathcal{C}(x)[y]$ we can find a polynomial in the variable~$x$ contained in~$(f(x,y),g(x,y))\subseteq\mathfrak{p}$, which by the algebraic closedness of~$\mathcal{C}$ reduces to a linear factor~$(x-a)$ contained in~$\mathfrak{p}$ and analogously~$(y-b)\in\mathfrak{p}$.
@@ -69,6 +70,7 @@
 \end{exercise}
 
 \begin{exercise}
+  \label{exercise:42j}
   Assume~$b_1b_2\in\phi^{-1}(\mathfrak{p})$, we have
   \begin{equation}
     \phi(b_1b_2)=\phi(b_1)\phi(b_2)\in\phi\left( \phi^{-1}(\mathfrak{p}) \right)=\mathfrak{p},
@@ -184,5 +186,35 @@ There are no exercises in this section.
 \end{exercise}
 
 \begin{exercise}
+  \label{exercise:44f}
   Perform it on~$A/I$. The ideal~$I$ is sent to~$0$ under the quotient map, hence the nilradical~$\nil(A/I)$ is the intersection of all prime ideals containing~$I$, but this corresponds to~$\sqrt{I}$ in~$A$.
+\end{exercise}
+
+\begin{exercise}
+  By~\autoref{exercise:42j} closed points pull back to closed points. Now a closed set is the finite union of closed points, which under an inverse map is preserved.
+\end{exercise}
+
+\begin{exercise} % TODO finish this
+  \label{exercise:44h}
+  \begin{enumerate}
+    \item By~\autoref{exercise:42g} we have that~$\Spec B/I$ corresponds to the vanishing set~$\vanishing(I)$, hence it is closed by definition of the Zariski topology.
+
+      Analogously, the vanishing set~$\vanishing((f))$ described the complement of~$\Spec S^{-1}B$ in this case.
+
+      This construction doesn't work for every localization as is clear from Figure~4.5 and~\autoref{exercise:42d}. The complement of the ``shred of~$\mathbb{A}_{\mathbb{C}}^2$'' doesn't fulfill the conditions for a closed set described there and in Example~7 of that section.
+
+    \item By an argument on the vanishing sets we easily obtain the statement. Maybe I should put this down in symbols.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  By definition we have
+  \begin{equation}
+    \vanishing(I)=\left\{ [\mathfrak{p}]\in\Spec A\,|\,I\subseteq[\mathfrak{p}] \right\}
+  \end{equation}
+  and~$f$ vanishes on this set if and only if it is contained in the prime ideals that constitute the points of~$\vanishing(I)$. But using~\autoref{exercise:44f} this is exactly equivalent to~$f\in\sqrt{I}$.
+\end{exercise}
+
+\begin{exercise}
+  By~\autoref{exercise:44h} we have the subspace topology on~$\Spec k[x]_{(x)}$ so we need to state what the subspace is. By using~\autoref{exercise:42h} we obtain the affine line with the origin (corresponding to~$(x)$) removed.
 \end{exercise}
