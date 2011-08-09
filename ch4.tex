@@ -153,8 +153,9 @@ There are no exercises in this section.
 \end{exercise}
 
 \begin{exercise}
+  \label{exercise:44c}
   \begin{enumerate}
-    \item We need to find vanishing sets such that their complements are~$\emptyset$ and~$\Spec A$. The vanishing set~$\vanishing(A)$ contains all of~$A$, hence its complement is empty. On the other hand,~$\vanishing(\left\{ 0 \right\})$ contains all prime ideals of~$A$, hence equals~$\Spec A$.
+    \item\label{enumerate:44c-a} We need to find vanishing sets such that their complements are~$\emptyset$ and~$\Spec A$. The vanishing set~$\vanishing(A)$ contains all of~$A$, hence its complement is empty. On the other hand,~$\vanishing(\left\{ 0 \right\})$ contains all prime ideals of~$A$, hence equals~$\Spec A$.
 
     \item This equality is obvious: for a point to be contained in the intersection, it must be contained in all ideals~$(I_i)_i$, but that means it is contained in the vanishing set of the sum of the ideals because this contains exactly all those elements.
 
@@ -208,6 +209,7 @@ There are no exercises in this section.
 \end{exercise}
 
 \begin{exercise}
+  \label{exercise:44i}
   By definition we have
   \begin{equation}
     \vanishing(I)=\left\{ [\mathfrak{p}]\in\Spec A\,|\,I\subseteq[\mathfrak{p}] \right\}
@@ -217,4 +219,45 @@ There are no exercises in this section.
 
 \begin{exercise}
   By~\autoref{exercise:44h} we have the subspace topology on~$\Spec k[x]_{(x)}$ so we need to state what the subspace is. By using~\autoref{exercise:42h} we obtain the affine line with the origin (corresponding to~$(x)$) removed.
+\end{exercise}
+
+
+\section{A base of the Zariski topology on \texorpdfstring{$\Spec A$}{Spec A}: distinguished open sets}
+
+\begin{exercise}
+  Using the hint we find
+  \begin{equation}
+    X\setminus\vanishing(S)=\left\{ [\mathfrak{p}]\in\Spec A\,|\,S\nsubseteq[\mathfrak{p}] \right\}
+  \end{equation}
+  and~$I\nsubseteq\mathfrak{p}$ if there is an~$f\in S$ such that~$f\notin\mathfrak{p}$, so~$\distinguished(f)\subseteq X\setminus\vanishing(S)$ in this case. We obtain~$X\setminus\vanishing(S)=\bigcup_{f\in S}\distinguished(f)$ as desired.
+\end{exercise}
+
+\begin{exercise} % TODO do this
+  \label{exercise:45b}
+  I have to write down a nice answer.
+\end{exercise}
+
+\begin{exercise}
+  If~$\bigcup_{j\in J}\distinguished(f_j)=\Spec A$ we have~$(f_j)_{j\in J}=A$ by~\autoref{exercise:45b}, which means there is a finite subset~$J'$ of the index set~$J$ such that~$\sum_{j\in J'}a_jf_j=1$, so~$(f_j)_{j\in J'}=A$, such that~$\bigcup_{j\in J'}\distinguished(f_j)=\Spec A$.
+\end{exercise}
+
+\begin{exercise}
+  We have
+  \begin{equation}
+    \begin{aligned}
+      \distinguished(f)\cap\distinguished(g)&=\left\{ [\mathfrak{p}]\in\Spec A\,|\,f\notin\mathfrak{p}\wedge g\notin\mathfrak{p} \right\} \\
+      &=\left\{ [\mathfrak{p}]\in\Spec A\,|\,fg\notin\mathfrak{p} \right\} \\
+      &=\distinguished(fg)
+    \end{aligned}
+  \end{equation}
+  because~$\mathfrak{p}$ is prime, so~$fg$ cannot be an element of it unless at least one of the factors is.
+\end{exercise}
+
+\begin{exercise} % TODO second equivalence
+  \label{exercise:45e}
+  By taking complements we can reduce this to~\autoref{exercise:44i}.
+\end{exercise}
+
+\begin{exercise}
+  If~$f\in\mathfrak{N}$ we have~$f^n=0$ for some~$n$, which by~\autoref{exercise:44c}\ref{enumerate:44c-a} (this is more background information than the actual reason) and~\autoref{exercise:45e} gives~$\distinguished(f)\subseteq\distinguished(0)=\emptyset$.
 \end{exercise}
