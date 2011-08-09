@@ -294,3 +294,37 @@ There are no exercises in this section.
     \item Given a cover of a closed subset of a quasicompact space, we can add the complement to every open set used in the covering, which gives us by definition of the subspace topology (all open sets in the subspace arise by intersecting with the subspace) a covering of the big space using open sets. Apply the quasicompactness condition here to obtain a finite covering and remove the complement of the closed subset, resulting in a finite subcover .
   \end{enumerate}
 \end{exercise}
+
+\begin{exercise}
+  \label{exercise:46f}
+  By definition~$\vanishing(\mathfrak{p})=\left\{ [\mathfrak{q}]\in\Spec A\,|\, \mathfrak{p}\subseteq\mathfrak{q}\right\}$, while the closure of~$\left\{ [\mathfrak{p}] \right\}$ contains all points in~$\Spec A$ that are contained in the point~$[\mathfrak{p}]$, we see that these definitions are equivalent.
+\end{exercise}
+
+\begin{exercise}
+  This is obvious from~\autoref{exercise:46f} and the definition:~the point~$x$ is represented by~$[\mathfrak{p}]=[(y-x^2)]$ which is a prime ideal and we obtain
+  \begin{equation}
+    \overline{\left\{ x \right\}}=\overline{\left\{ [\mathfrak{p}] \right\}}=\vanishing(\mathfrak{p})=\vanishing(y-x^2)=K.
+  \end{equation}
+\end{exercise}
+
+\begin{exercise} % TODO do this
+  \begin{enumerate}
+    \item This is too tricky for the moment, I'll come back to this later.
+
+    \item This is too tricky for the moment, I'll come back to this later.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  Assume for the sake of contradiction that we have an infinite descending chain. Using~4.4.3 the first closed subset that is not the entire space\footnote{We've assumed an infinite descending chain. Just repeating the whole space isn't quite infinite.} is built using a finite number of curves and closed points. The next set (ignoring equalities, of which there are only finitely many between each real step) contains one curve or one point less (that cannot lie on one of the curves!). This process can only be repeated a finite number of times, ending in~$\emptyset$, a contradiction on the infiniteness assumption.
+\end{exercise}
+
+\begin{exercise}
+  Assume~$A$ is Noetherian and take an ideal~$I$ that is not finitely generated, \ie, we have~$I=(x_1,x_2,\ldots)$. Now construct the chain
+  \begin{equation}
+    (x_1)\subsetneqq(x_1,x_2)\subsetneqq(x_1,x_2,x_3)\subsetneqq\ldots
+  \end{equation}
+  and this would constitute an infinitely ascending chain, contradiction. At some point the ideal~$I$ should pop up and we have a finite set of generators.
+
+  Assume every ideal of~$A$ is finitely generated, but~$A$ is not Noetherian. Take an infinite ascending chain of ideals, the union is again an ideal. This ideal is finitely generated, so take the index for which each of the generators is contained in the ideal at that position of the chain. We have equality for all subsequent ideals, contradicting the lack of Noetherianness.
+\end{exercise}
