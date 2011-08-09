@@ -225,6 +225,7 @@ There are no exercises in this section.
 \section{A base of the Zariski topology on \texorpdfstring{$\Spec A$}{Spec A}: distinguished open sets}
 
 \begin{exercise}
+  \label{exercise:45a}
   Using the hint we find
   \begin{equation}
     X\setminus\vanishing(S)=\left\{ [\mathfrak{p}]\in\Spec A\,|\,S\nsubseteq[\mathfrak{p}] \right\}
@@ -238,6 +239,7 @@ There are no exercises in this section.
 \end{exercise}
 
 \begin{exercise}
+  \label{exercise:45c}
   If~$\bigcup_{j\in J}\distinguished(f_j)=\Spec A$ we have~$(f_j)_{j\in J}=A$ by~\autoref{exercise:45b}, which means there is a finite subset~$J'$ of the index set~$J$ such that~$\sum_{j\in J'}a_jf_j=1$, so~$(f_j)_{j\in J'}=A$, such that~$\bigcup_{j\in J'}\distinguished(f_j)=\Spec A$.
 \end{exercise}
 
@@ -260,4 +262,35 @@ There are no exercises in this section.
 
 \begin{exercise}
   If~$f\in\mathfrak{N}$ we have~$f^n=0$ for some~$n$, which by~\autoref{exercise:44c}\ref{enumerate:44c-a} (this is more background information than the actual reason) and~\autoref{exercise:45e} gives~$\distinguished(f)\subseteq\distinguished(0)=\emptyset$.
+\end{exercise}
+
+
+\section{Topological definitions}
+
+\begin{exercise}
+  If there were a nonempty non-dense open subset, take its complement as~$Y$ and its closure as~$Z$ in the definition of irreducibility. We have a contradiction.
+\end{exercise}
+
+\begin{exercise}
+  Take~$X=Y\cup Z$ as in the definition. The generic point~$(0)$ (because~$A$ is integral) should be contained in at least one of these. But by definition of a vanishing set we have that \emph{all} points of~$\Spec A$ will be contained in this vanishing set, hence~$Y$ or~$Z$ equals~$X$.
+\end{exercise}
+
+\begin{exercise}
+  If~$\left\{ x \right\}$ is a closed subset, it corresponds to a vanishing set. But this vanishing set equals~$\left\{ x \right\}$ if and only if the only point it contains is the prime ideal (corresponding to)~$x$, which happens if and only if it is a maximal ideal. If it wasn't maximal, we'd have by application of Zorn's lemma a maximal ideal containing it and maximal ideals are prime, contradiction the fact that the set is a singleton.
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item By~\autoref{exercise:45a} the distinguished opens form a basis for the Zariski topology and by~\autoref{exercise:45c} we can reduce a covering using distinguished opens to a finite covering. Replace the general covering~$\bigcup_{i\in I}U_i$ by the covering where every~$U_i$ is replaced by the (arbitrary) union of distinguished opens. Take the finite subcover of these distinguished opens and take the original open sets that corresponded to the distinguished opens, these are bigger, hence constitute a finite subcover themselves.
+
+    \item The ideal~$\mathfrak{m}=(x_1,x_2,\ldots)$ is a maximal ideal as~$A/\mathfrak{m}=k$, a field. The complement of~$\vanishing(\mathfrak{m})$ can be covered using distinguished sets~$\distinguished((x_i))_{i\in\mathbb{N}}$, this covering doesn't admit a finite subcovering.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item Given a cover of~$X$, consider the induced coverings of the subspaces, take finite subcovers there and take the finite union of these covers.
+
+    \item Given a cover of a closed subset of a quasicompact space, we can add the complement to every open set used in the covering, which gives us by definition of the subspace topology (all open sets in the subspace arise by intersecting with the subspace) a covering of the big space using open sets. Apply the quasicompactness condition here to obtain a finite covering and remove the complement of the closed subset, resulting in a finite subcover .
+  \end{enumerate}
 \end{exercise}
