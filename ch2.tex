@@ -415,7 +415,7 @@ There are no exercises in this section.
   in an obvious way, where~$g^*$ is \emph{appending} the morphism to~$f\colon F(A)\to B$.
 \end{exercise}
 
-\begin{exercise} % TODO check whether I got all the symbols correct
+\begin{exercise}
   The map~$\eta_A$ should behave somewhat like an identity. If we take
   \begin{equation}
     \eta_A\colonequals\tau_{A,F(A)}^{-1}\left( \identity_{F(A)} \right) 
@@ -427,6 +427,8 @@ There are no exercises in this section.
     \epsilon_B\colonequals\tau_{G(B),B}^{-1}\left( \identity_{G(B)} \right)
   \end{equation}
   in~$\Mor_{\mathcal{A}}(G\circ F(A),A)$ where~$\identity_{G(B)}\in\Mor_{\mathcal{A}}(G(B),G(B))$.
+
+  Now these maps are the ones we were looking by the functoriality of~$F$ and~$G$.
 \end{exercise}
 
 \begin{exercise}
@@ -445,7 +447,7 @@ There are no exercises in this section.
   Chasing the diagram in the other direction, through~$f^*\circ\tau_{A',B}$ we first obtain~$h(-_M)(-_N)$ and then end up with~$h(f(-_M))(-_N)$, hence equality. The rest is analogous, now you have to compose with the map~$g\colon B\to B'$.
 \end{exercise}
 
-\begin{exercise} % TODO prove adjointness
+\begin{exercise}
   Let's take the equivalence relation described in the notes with \emph{pointwise addition}. Now we check the group axioms:
   \begin{description}
     \item[closure] taking~$(a,b)$ and~$(c,d)$ in~$S\times S$, the pointwise sum is~$(a+c,d+e)$ and both components are defined by the binary operation in the semigroup;
@@ -454,9 +456,32 @@ There are no exercises in this section.
     \item[inverse element] the inverse element of~$(a,b)$ is given by~$(b,a)$: their sum is~$(a+b,b+a)$ which is a representative of the equivalence class of the identity.
   \end{description}
 
-  The map~$S\to\groupification(S)$ is given by choosing a fixed element~$e$ and mapping~$s$ to~$\overline{(s,e)}$ in~$S\times S/{\sim}$.
+  The map~$S\to\groupification(S)$ is given by choosing a fixed element~$e$ and mapping~$s$ to~$\overline{(s,e)}$ in~$S\times S/{\sim}$. By the equivalence relation, any choice will do and induce the same abelian group.
 
-  The adjointness is still to come.
+  Reproducing the diagram for~\autoref{exercise:25a} with the corresponding functors in place we obtain
+  \begin{equation}
+    \begin{tikzpicture}[description/.style = {fill = white, inner sep = 2pt}, baseline=(current bounding  box.center)]
+      \matrix (m) [matrix of math nodes, row sep = 3em, column sep = 3em, text height = 1.5ex, text depth = 0.25ex]
+      {
+        \Mor_{\category{Ab}}\left( \groupification(S'),G \right) & \Mor_{\category{Ab}}\left( \groupification(S),G \right) & \Mor_{\category{Ab}}\left( \groupification(S),G' \right) \\
+        \Mor_{\category{Ab S}}\left( S',\forgetful(G) \right) & \Mor_{\category{Ab S}}\left( S,\forgetful(G) \right) & \Mor_{\category{Ab S}}\left( S,\forgetful(G') \right) \\
+      };
+      \path[->] (m-1-1) edge node[auto] {$\groupification f^*$} (m-1-2)
+                (m-1-2) edge node[auto] {$g^*$}  (m-1-3)
+                (m-2-1) edge node[auto] {$f^*$}  (m-2-2)
+                (m-2-2) edge node[auto] {$\forgetful g^*$} (m-2-3)
+                (m-1-1) edge node[auto] {$\tau_{S',G}$} (m-2-1)
+                (m-1-2) edge node[auto] {$\tau_{S,G}$}  (m-2-2)
+                (m-1-3) edge node[auto] {$\tau_{S,G'}$} (m-2-3);
+    \end{tikzpicture}
+  \end{equation}
+  where~$f\colon S\to S'$ in~$\category{Ab S}$ and~$g\colon G\to G'$ in~$\category{Ab}$. The maps~$\tau_{S,G}$ are obtained by forgetting the group structure on~$\groupification(S)$, \ie, given~$m\colon\groupification(S)\to G$ we let~$\tau_{S,G}m$ be the map sending~$s\in S$ to the image of~$\overline{(s,e)}$ under~$m$ which is~$\overline{(m(s),m(e))}$.
+
+  Now the commutativity follows from the following observation: taking a morphism~$n\colon\groupification(S')\to G$, applying~$\groupification f^*$ yields a map
+  \begin{equation}
+    \groupification f^*(g)\colon\overline{(s,e)}\mapsto g\left( \overline{\left( f(s),f(e) \right)} \right). 
+  \end{equation}
+  We immediately see that going the other direction is equal by definition of~$f^*$. The second part is completely analogous.
 \end{exercise}
 
 \begin{exercise}
