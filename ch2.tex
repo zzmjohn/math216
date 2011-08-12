@@ -71,8 +71,8 @@ There are no exercises in this section.
   as we split the fraction into parts on which~$\mathrm{i}$ works.
 \end{exercise}
 
-\begin{exercise} % TODO this might be a little short
-  The definition is already given in the hint. The checks for the~$S^{-1}A$\nobreakdash-module structure are trivial and the universal property is satisfied by the proof from~\autoref{exercise:23d}.
+\begin{exercise}
+  The definition of~$S^{-1}M$ is already given thoroughly in the hint, we obtain the map~$\phi\colon m\mapsto (m/1)$ because~$1\in S$ is required. The checks for the~$S^{-1}A$\nobreakdash-module structure are trivial and the universal property is satisfied by the proof from~\autoref{exercise:23d}.
 \end{exercise}
 
 \begin{exercise}
@@ -101,10 +101,10 @@ There are no exercises in this section.
   
   Now we can map the direct product into~$\mathbb{Z}/(d)$ in an obvious way, which induces a map from the tensor product to~$\mathbb{Z}/(d)$. The element~$1\otimes 1$ is mapped to~$1$ and consequently has order~$d$, so there is an element of order \emph{at least~$d$}. Hence we have obtained the desired isomorphism.
 
-  In this special case:~$\gcd(10,12)=2$.
+  In this special case:~$\gcd(10,12)=2$, so~$\mathbb{Z}/(10)\otimes_{\mathbb{Z}}\mathbb{Z}/(12)\cong\mathbb{Z}/(2)$.
 \end{exercise}
 
-\begin{exercise} % TODO expand / rewrite
+\begin{exercise}
   \label{exercise:23h}
   That~$f\otimes\identity\colon M\otimes N\to M''\otimes N$ is still surjective is obvious.
 
@@ -123,11 +123,11 @@ There are no exercises in this section.
   Unique up to unique isomorphism means that the object is not necessarily unique, but all objects satisfying the universal property are isomorphic using a unique (iso)morphism (as~$f$ is said to be so). Hence these objects have trivial automorphism groups. By the same proof as for the universal property of categorical products this holds for tensor products.
 \end{exercise}
 
-\begin{exercise} % TODO expand?
-  The construction exactly quotients those objects that correspond to the bilinearity of the morphisms that are considered. Therefore all morphisms~$M\times N\to T'$ split uniquely through~$T$.
+\begin{exercise}
+  The construction exactly quotients those objects that correspond to the bilinearity of the morphisms that are considered. Therefore all morphisms~$M\times N\to T'$ factor uniquely through~$T$.
 \end{exercise}
 
-\begin{exercise} % TODO this feels very fishy
+\begin{exercise}
   \label{exercise:23k}
   \begin{enumerate}
     \item As stated in~\autoref{exercise:23d}: giving a ring map~$A\to B$ is the same as giving~$B$ an~$A$\nobreakdash-algebra structure. So we can consider both~$B$ and~$M$ as~$A$\nobreakdash-modules.
@@ -142,7 +142,7 @@ There are no exercises in this section.
           \begin{equation}
             \begin{aligned}
               (b_1+b_2)(b\otimes m)&=(b_1+b_2)b\otimes m \\
-              &=(b_1b+b_2)\otimes m \\
+              &=(b_1b+b_2b)\otimes m \\
               &=b_1b\otimes m+b_2b\otimes m \\
               &=b_1(b\otimes m)+b_2(b\otimes m)
             \end{aligned}.
@@ -158,6 +158,8 @@ There are no exercises in this section.
             1_B(b\otimes m)=1_Bb\otimes m=b\otimes m.
           \end{equation}
       \end{description}
+
+      The~$A$\nobreakdash-linearity (we're taking the tensor product over~$A$) is induced by the construction and requires no explicit checking.
 
       The functorality of the mapping~$\category{Mod}_A\to\category{Mod}_B$ follows from assigning to each morphism~$f\colon M_1\to M_2$ in the first category the map~$\identity\otimes f$ in the second.
 
@@ -226,8 +228,30 @@ There are no exercises in this section.
   By definition of~$X_1\times_Y X_2$ the maps to~$Y$ through~$X_1$ and~$X_2$ agree. So the composition with~$Y\to Z$ agrees as well. We can now put the fibered product~$X_1\times_Y X_2$ in the position of~$W$ for the definition of the fibered product~$X_1\times_Z X_2$, obtaining a unique or natural morphism~$X_1\times_Y X_2\to X_1\times_Z X_2$.
 \end{exercise}
 
-\begin{exercise} % TODO do this one
-  The magic diagram still feels like magic. I will come back to this exercise.
+\begin{exercise}
+  I'm not sure to what extent the map should (or even \emph{can}) be described, but it is induced by the diagram
+  \begin{equation}
+    \begin{tikzpicture}[description/.style = {fill = white, inner sep = 2pt}, baseline=(current bounding  box.center)]
+      \matrix (m) [matrix of math nodes, row sep = 3em, column sep = 3em, text height = 1.5ex, text depth = 0.25ex]
+      {
+        X_1\times_Y X_2 & X_2 \\
+        X_1 & Y \\
+        & \\
+        X_1\times_Z X_2 & X_2 \\
+        X_1 & Z \\
+      };
+      \path[->] (m-1-1) edge (m-1-2) (m-1-2) edge (m-2-2)
+                (m-1-1) edge (m-2-1) (m-2-1) edge (m-2-2)
+                (m-4-1) edge (m-4-2) (m-4-2) edge (m-5-2)
+                (m-4-1) edge (m-5-1) (m-5-1) edge (m-5-2);
+      \path[->] (m-1-2) edge[bend left = 45]  node[auto] {$\identity_{X_2}$} (m-4-2)
+                (m-2-1) edge[bend right = 45] node[left] {$\identity_{X_1}$} (m-5-1)
+                (m-2-2) edge[bend left = 45]  node[auto] {$Y\to Z$}          (m-5-2);
+      \path[->, dashed] (m-1-1) edge[bend right = 45] node[left] {$\exists!$} (m-4-1);
+                
+    \end{tikzpicture}
+  \end{equation}
+  as all maps agree by taking the compositions and we can use the definition of the fibered diagram to obtain the unique map~$X_1\times_Y X_2\to X_1\times_Z X_2$.
 \end{exercise}
 
 \begin{exercise}
