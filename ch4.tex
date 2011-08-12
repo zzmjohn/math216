@@ -133,7 +133,15 @@
 \end{exercise}
 
 \begin{exercise} % TODO copy
-  I have seen this exercise in my Commutative algebra course. It might be a good idea to state it here as well.
+  Let~$N(A)$ be the intersection of all prime ideals of~$A$, let~$\mathfrak{p}$ be a prime ideal of~$A$ and~$x\in\mathfrak{N}(A)$. We have~$x^{k-1}x=0\in P$ for some positive integer~$k$ and by primality of~$\mathfrak{p}$ we have~$x\in\mathfrak{p}$ or~$x^{k-1}\in\mathfrak{p}$, so by induction~$x\in\mathfrak{p}$, implying~$N(A)\subseteq\mathfrak{p}$ and~$\mathfrak{N}(A)\subseteq N(A)$.
+
+  Now take~$x$ in the complement, \ie, in~$A\setminus\mathfrak{N}(A)$. Define
+  \begin{equation}
+    S=\left\{ I\triangleleft A\,|\,x^k\notin I\forall k\in\mathbb{N}_0 \right\}
+  \end{equation}
+  and there is the obvious partial order, induced by inclusion. Furthermore,~$(0)\in S$ so it is non-empty. By Zorn's lemma we get a maximal element~$I\in S$.
+
+  Suppose~$a,b\in A\setminus I$, the ideals~$(I,a)$ and~$(I,b)$ are strictly bigger, hence they are not in~$S$. Therefore we have the existence of~$n$ and~$m$ such that~$x^n\in(I,a)$ and~$x^m\in(I,b)$, so~$x^{n+m}\in(I,a)(I,b)$ which is a subset of~$(I,ab)$. We obtain~$ab\notin I$ so~$I$ is a prime ideal. But in that case we would have~$x\in I$, a~contradiction because~$I\in S$.
 \end{exercise}
 
 \begin{exercise} % TODO do this
