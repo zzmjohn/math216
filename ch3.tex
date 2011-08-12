@@ -4,8 +4,9 @@
   As every element of~$\mathcal{O}_p\setminus\mathfrak{m}$ is nonzero in a neighbourhood of~$p$ we can restrict an element such that it is invertible there, a property which is preserved when taking the stalk. Hence the germ of a non-vanishing function is invertible and~$\mathfrak{m}$ is invertible.
 \end{exercise}
 
-\begin{exercise} % TODO find out what is asked for
-  I don't really have a differential geometry background and I fail to see what should be proved. But I should revisit this exercise later.
+\begin{exercise}
+  \label{exercise:31b}
+  I don't really have a differential geometry background and I fail to see what should be proved. But I should revisit this exercise later\todo{\autoref{exercise:31b}: $\mathfrak{m}/\mathfrak{m}^2$ is real vector space}.
 \end{exercise}
 
 
@@ -157,14 +158,16 @@
   The abelian-categorial notions are verified ``open set by open set'', hence we consider a family of functors as in~\autoref{exercise:33g} indexed by all open sets in the topology on~$X$. The equivalence follows.
 \end{exercise}
 
-\begin{exercise} % TODO finish
-  The uniqueness of the induced restriction map and the injectivity for every open set give us the identity axiom: if all restrictions are equal we can just move everything one morphism to the right and identify things there. The same holds for the gluability axiom: given local~$f_i$, we move everything using the injectivity to the sheaf's object~$\mathcal{F}(U_i)$ and lift things to~$\mathcal{F}(U)$. Now we don't know yet that this section lives in~$\ker_{\textrm{pre}}\phi$, but if it wouldn't, there needs to be an open set for which the image under~$\phi$ is nonzero. % TODO
+\begin{exercise}
+  \label{exercise:33i}
+  The uniqueness of the induced restriction map and the injectivity for every open set give us the identity axiom: if all restrictions are equal we can just move everything one morphism to the right and identify things there. The same holds for the gluability axiom: given local~$f_i$, we move everything using the injectivity to the sheaf's object~$\mathcal{F}(U_i)$ and lift things to~$\mathcal{F}(U)$. Now we don't know yet that this section lives in~$\ker_{\textrm{pre}}\phi$, but if it wouldn't, there needs to be an open set for which the image under~$\phi$ is nonzero\todo{\autoref{exercise:33i}: check that presheaf kernel is a sheaf}.
 \end{exercise}
 
-\begin{exercise} % TODO finish
+\begin{exercise}
+  \label{exercise:33j}
   The inclusion~$\underline{\mathbb{Z}}\hookrightarrow\mathcal{O}_X$ is obvious: constant functions are holomorphic. Under the mapping~$f\mapsto\exp(2\pi\mathrm{i}f$ the kernel are exactly those functions such that~$\exp(2\pi\mathrm{i}f)$ is~$1$ (the neutral element in this multiplicative group). This is true for all constant integer functions:~$2\pi\mathrm{i}n$ evaluates under exponentiation to~$1$. As~$\mathcal{F}$ is the presheaf of functions admitting a holomorphic logarithm, they must come from the exponentiation of a holomorphic function contained in~$\mathcal{O}_X$ and we have the surjectivity of~$\mathcal{O}_X\twoheadrightarrow\mathcal{F}$.
 
-  The failure of the sheaf axioms is for tomorrow.
+  The failure of the sheaf axioms is for tomorrow\todo{\autoref{exercise:33j}: show that holomorphic functions admitting a logarithm do not form a sheaf}
 \end{exercise}
 
 
@@ -252,12 +255,16 @@
   The sheafification preserves the identity, the induced~$\phi^{\sh}$ is unique by definition, but~$\identity_{\mathcal{F}^{\sh}}$ does the trick. And it agrees with compositions by the uniqueness: the composition of the sheafified morphisms serves as the candidate for the sheafification of the composition.
 \end{exercise}
 
-\begin{exercise} % TODO do this
-  I'm not a category-lover, but I'll do this exercise later.
+\begin{exercise}
+  \label{exercise:34l}
+  I'm not a category-lover, but I'll do this exercise later\todo{\autoref{exercise:34l}: prove adjointness of sheafification functor and forgetful functor}
 \end{exercise}
 
-\begin{exercise} % TODO Alternative answer using Remark 3.6.3
+\begin{exercise}
+  \label{exercise:34m}
   Stalks are defined as equivalence classes of sections on open sets. The definition of the sheafification requires the existence of a section inducing stalks. The stalks of the sheafification are the canonical projections. So we get a morphism from the stalks of the presheaf to the stalks of the sheaf by mapping~$\overline{(s_U,U)}_x$ to~$s_{U,x}$ which is by construction a stalk of the sheafification. This mapping is bijective: surjectivity follows from construction of~$\sh$ where a product of stalks arises from a section over a certain open set, take this section and set as representative of the equivalence class of a stalk in the presheaf as preimage. For the injectivity: consider two germs in~$x$ such that their image is equal in the stalk of~$\mathcal{F}^{\sh}$, by the previous observation we could've picked the inducing compatible germs with their corresponding open set as the representative of the stalk of the presheaf, which makes the two germs equal.
+
+  And I should add the answer using Remark 3.6.3\todo{\autoref{exercise:34m}: sheafification is isomorphism of stalks, category theory style}.
 \end{exercise}
 
 \begin{exercise}
@@ -300,8 +307,9 @@
   Analogous to~\autoref{exercise:35a}.
 \end{exercise}
 
-\begin{exercise} % TODO expand and draw
-  The image presheaf is defined by~$\image^{\pre}\phi(U)=\phi(U)(\mathcal{F}(U))$. 
+\begin{exercise}
+  \label{exercise:35c}
+  The image presheaf is defined by~$\image^{\pre}\phi(U)=\phi(U)(\mathcal{F}(U))$\todo{\autoref{exercise:35c}: definition of image presheaf}. 
 \end{exercise}
 
 \begin{exercise}
@@ -331,11 +339,13 @@
   By~\autoref{exercise:35e} we can take~$\Hom$ for each abelian group of sections and using the exactness of that sequence we obtain by left-exactness of~$\Hom$ the result.
 \end{exercise}
 
-\begin{exercise} % TODO do this
-  This is boring but important. I should do this.
+\begin{exercise}
+  \label{exercise:35h}
+  This is boring but important. I should do this\todo{\autoref{exercise:35h}: $\mathcal{O}_X$-modules abelian category}.
 \end{exercise}
 
-\begin{exercise} % TODO expand?
+\begin{exercise}
+  \label{exercise:35i}
   \begin{enumerate}
     \item We want it to be defined using the tensor-$\Hom$ adjunction we saw in~\autoref{exercise:25d}. The presheaf tensor product of two~$\mathcal{O}_X$-modules~$\mathcal{F}$ and~$\mathcal{G}$ is defined by
       \begin{equation}
@@ -343,7 +353,7 @@
       \end{equation}
       and the tensor product of two~$\mathcal{O}_X$\nobreakdash-modules is the sheafification of this construction.
 
-      This construction satisfies the adjointness by the adjunction of modules.
+      This construction satisfies the adjointness by the adjunction of modules\todo{\autoref{exercise:35i}: expand on tensor product of~$\mathcal{O}_X$-modules}.
 
     \item Because stalks are preserved by sheafification, we have to show that the tensor product of stalks is the stalk of the presheaf tensor product. Using the fact that the tensor product commutes with direct limits (can we?), we obtain
       \begin{equation}
@@ -361,12 +371,13 @@
   For the commutativity of the restriction triangle the same idea holds.
 \end{exercise}
 
-\begin{exercise} % TODO finish
+\begin{exercise}
+  \label{exercise:36b}
   Let~$f\colon f^{-1}\mathcal{G}\to\mathcal{F}\in\Mor_X(f^{-1}\mathcal{G},\mathcal{F}$. We can apply the pushforward to both sheaves, resulting in~$f_*f^{-1}\mathcal{G}\to f_*\mathcal{F}$. But by categorical definition in~3.6.1 we get a canonical map~$\mathcal{G}\to f_*f^{-1}\mathcal{G}$ and we can compose these to get~$\mathcal{G}\to f_*\mathcal{F}$.
 
   The inverse map is given analogously by taking~$g\colon\mathcal{G}\to f_*\mathcal{F}$, applying the inverse image~$f^{-1}$ and composing it with the natural~$f^{-1}f_*\mathcal{F}\to\mathcal{F}$.
 
-  As for the bijectivity of the map, I don't have a clue (yet).
+  As for the bijectivity of the map, I don't have a clue (yet)\todo{\autoref{exercise:36b}: adjointness of~$f_*$ and~$f^{-1}$}.
 \end{exercise}
 
 \begin{exercise}
@@ -417,9 +428,9 @@
   We have enough information to determine the stalk at~$p$: we can drop the unions as the only interesting information is present in the open sets containing the point.
 \end{exercise}
 
-\begin{exercise} % TODO expand
+\begin{exercise}
   \label{exercise:37b}
-  An element of~$\mathcal{F}(B)$ is given by~$(f_p\in F_p)_{p\in B}$ where we can take~$p\in B=B$ such that~$s_q=f_q$ for~$q\in B$. But~$F_p=\varinjlim F(B_i)$, such that the germ~$s_q=f_q$ for all~$q\in B$.
+  An element of~$\mathcal{F}(B)$ is given by~$(f_p\in F_p)_{p\in B}$ where we can take~$p\in B=B$ such that~$s_q=f_q$ for~$q\in B$. But~$F_p=\varinjlim F(B_i)$, such that the germ~$s_q=f_q$ for all~$q\in B$\todo{\autoref{exercise:37b}: prove isomorphism of sheaves on a base}.
 \end{exercise}
 
 \begin{exercise}
@@ -436,6 +447,7 @@
   We can now define the stalks of~$\mathcal{F}$: the sheaves on the~$(U_i)_i$ determine the sheaf on a base~$F$ by the cocycle condition which provides the compatibility of the base. Now we have obtained our induced sheaf.
 \end{exercise}
 
-\begin{exercise} % TODO find answer
-  It might be unimportant, but I would like to answer it. Unfortunately I fail to do so.
+\begin{exercise}
+  \label{exercise:37e}
+  It might be unimportant, but I would like to answer it. Unfortunately I fail to do so\todo{\autoref{exercise:37e}: surjective on base implies surjective}.
 \end{exercise}

@@ -223,7 +223,7 @@ There are no exercises in this section.
   By~\autoref{exercise:42j} closed points pull back to closed points. Now a closed set is the finite union of closed points, which under an inverse map is preserved.
 \end{exercise}
 
-\begin{exercise} % TODO finish this
+\begin{exercise}
   \label{exercise:44h}
   \begin{enumerate}
     \item By~\autoref{exercise:42g} we have that~$\Spec B/I$ corresponds to the vanishing set~$\vanishing(I)$, hence it is closed by definition of the Zariski topology.
@@ -382,15 +382,16 @@ There are no exercises in this section.
   Take a covering~$(U_i)_i$ of an open subset using open sets and define~$Z_1$ to be a random open set. Now inductively define a chain by picking an element not yet contained in the chain and taking the union of the previous open sets together with an open set containing this previously uncovered element. By taking the complement we obtain an descending chain of closed subsets. This must stabilize, but if it stabilizes to a non-empty set, these elements are not considered in our process, a contradiction.
 \end{exercise}
 
-\begin{exercise} % TODO refine argument
+\begin{exercise}
   \label{exercise:46n}
   A topological space is irreducible if and only if it is nonempty and it cannot be written as the union of two proper closed subsets. A closed subset is an irreducible component if and only if it is a maximal irreducible subspace. Now take a minimal prime~$\mathfrak[p]$ of~$A$, this corresponds to a point~$[\mathfrak{p}]$ that we can take the closure of: now all primes lying over this minimal prime are considered.
 
-  This is an irreducible subset: one of the subsets used in the union should contain the (generic) point and the closure is the \emph{smallest} subset such that it contains that point, so we've got irreducibility. This construction is maximal for the inclusion ordering: take a closed subset containing this irreducible subset, by the minimality of the prime ideal, there are other prime ideals necessary for constructing the vanishing set, when considering these it is obvious the subset is reducible.
+  This is an irreducible subset: one of the subsets used in the union should contain the (generic) point and the closure is the \emph{smallest} subset such that it contains that point, so we've got irreducibility. This construction is maximal for the inclusion ordering: take a closed subset containing this irreducible subset, by the minimality of the prime ideal, there are other prime ideals necessary for constructing the vanishing set, when considering these it is obvious the subset is reducible\todo{\autoref{exercise:46n}: refine argument about minimal primes in bijection with irreducible components}.
 \end{exercise}
 
-\begin{exercise} % TODO do this
-  This follows from~\autoref{exercise:46n} but I should add some explanation maybe.
+\begin{exercise}
+  \label{exercise:46o}
+  This follows from~\autoref{exercise:46n} but I should add some explanation maybe\todo{\autoref{exercise:46o}: prove irreducibility if and only if one minimal prime ideal}.
 \end{exercise}
 
 \begin{exercise}
@@ -406,11 +407,13 @@ There are no exercises in this section.
   In~\autoref{exercise:46p} we have discussed something that looks a lot like~$\times$: two axes of the affine plane yield the hint. Set~$A=\mathbb{R}[x,y]/(xy)$, we've proved that~$\Spec A$ is reducible. Yet it is connected: the topology on~$\Spec A$ is given by open sets that do not vanish, but a polynomial expression in the plane~$\mathbb{A}_{\mathbb{R}}^2$ has only a finite number of intersections with the axes, so the topology corresponds to the cofinite topology, in which there are no disjoint open sets!
 \end{exercise}
 
-\begin{exercise} % TODO do this
-  I still have to do this exercise.
+\begin{exercise}
+  \label{exercise:46s}
+  I still have to do this exercise\todo{\autoref{exercise:46s}: prove connected components equal unions irreducible components in Noetherian rings}.
 \end{exercise}
 
-\begin{exercise} % TODO finish the sentence I was writing before my computer crashed
+\begin{exercise}
+  \label{exercise:46t}
   A prime ideal of~$\prod_{i=1}^nA_i$ is given by~$\mathfrak{p}_j\times\prod_{i\neq j}A_i$ where~$\mathfrak{p}_j$ is a prime ideal in~$A_j$: this is easily seen to be a prime ideal (all factors except~$A_j$ go to zero,~$A_j/\mathfrak{p}_j$ becomes a domain). Likewise, these are the \emph{only} prime ideals: if there are two nontrivial factors, we'd obtain zerodivisors~$(0,1)$ and~$(1,0)$ (neglecting other factors) so it can never be a domain.
 
   Now define a map that looks like an injection:
@@ -429,7 +432,7 @@ There are no exercises in this section.
       (A_1,\ldots,A_{j-1},\mathfrak{p}_j,A_{j+1},\ldots,A_n)&\mapsto&(\mathfrak{p}_j,j)
     \end{array}
   \end{equation}
-  but this definition is rather redundant. These maps are continuous: take~$\vanishing(S_1\times\ldots\times S_n)$ a closed subset in the codomain of~$f$, and this is when my computer crashed and I'll finish then when~\TeX\ Live is installed but now I'm gonna type up my handwritten solutions to the following section.
+  but this definition is rather redundant. These maps are continuous: take~$\vanishing(S_1\times\ldots\times S_n)$ a closed subset in the codomain of~$f$, and this is when my computer crashed and I'll finish then when~\TeX\ Live is installed but now I'm gonna type up my handwritten solutions to the following section\todo{\autoref{exercise:46t}: finish $\Spec\prod_{i=1}^n A_i=\coprod_{i=1}^n\Spec A_i$}.
 \end{exercise}
 
 
@@ -451,8 +454,9 @@ There are no exercises in this section.
   If we take a point on one of the axes (\ie, $(x,0,0)$,~$(0,y,0)$ or~$(0,0,z)$) we immediately see that these vanishing on~$\ideal(S)$. On the other hand, any point not on these axes has 2 nonzero coordinates, hence, it does not vanish.
 \end{exercise}
 
-\begin{exercise} % TODO do this
-  I don't have a satisfying answer.
+\begin{exercise}
+  \label{exercise:47c}
+  I don't have a satisfying answer\todo{\autoref{exercise:47c}: prove $\vanishing(\ideal(S))=\overline{S}$}.
 \end{exercise}
 
 \begin{exercise}
