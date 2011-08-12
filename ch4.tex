@@ -397,3 +397,47 @@ There are no exercises in this section.
   \end{equation}
   but this definition is rather redundant. These maps are continuous: take~$\vanishing(S_1\times\ldots\times S_n)$ a closed subset in the codomain of~$f$, and this is when my computer crashed and I'll finish then when~\TeX\ Live is installed but now I'm gonna type up my handwritten solutions to the following section.
 \end{exercise}
+
+
+\section{The function \texorpdfstring{$I(\cdot)$}{I(-)}, taking subsets of \texorpdfstring{$\Spec A$}{Spec A} to ideals of \texorpdfstring{$A$}{A}}
+
+\begin{exercise}
+  By simply filling in the definition we obtain
+  \begin{equation}
+    \ideal(S)=\bigcap_{[\mathfrak{p}]S}\mathfrak{p}=(x)\cap(x-1,y)=(x^2-x,xy)
+  \end{equation}
+  and we observe that this ideal describes the function vanishing on the set~$S$.
+\end{exercise}
+
+\begin{exercise}
+  Hoping I have not been tricked, I say
+  \begin{equation}
+    \ideal(S)=(xy,yz,xz).
+  \end{equation}
+  If we take a point on one of the axes (\ie, $(x,0,0)$,~$(0,y,0)$ or~$(0,0,z)$) we immediately see that these vanishing on~$\ideal(S)$. On the other hand, any point not on these axes has 2 nonzero coordinates, hence, it does not vanish.
+\end{exercise}
+
+\begin{exercise} % TODO do this
+  I don't have a satisfying answer.
+\end{exercise}
+
+\begin{exercise}
+  Using~\autoref{exercise:44i} we have that~$f$ vanishes on~$\vanishing(J)$ if and only if~$f\in\sqrt{J}$, so by definition of~$\ideal(\cdot)$ we have~$f\in\sqrt{J}$, as~$\ideal(\vanishing(J))$ is the set of functions vanishing on~$\vanishing(J)$. It's just jotting down the definitions of the functions in words.
+\end{exercise}
+
+\begin{exercise}
+  Assume~$S$ is reducible, so we can write~$S=V_1\cup V_2$ where~$V_i$ is closed for~$i=1,2$. By Theorem~4.7.1 we have a bijection between closed subsets and radical ideals, so~$\ideal(S)=\ideal(V_1\cup V_2)\subsetneqq\ideal(V_i)$ where~$i=1,2$ by the inclusion-reversing property of~$\ideal(\cdot)$ and this inclusion is strict by the preceding theorem.
+
+  Now take~$f_i\in\ideal(V_i)\setminus\ideal(S)$, we have~$f_1f_2\in\ideal(S)$ because it vanishes on both components, hence~$\ideal(S)$ is not a prime ideal.
+
+  Conversely, take an ideal~$I$ that is not prime and~$f$,~$g$ in~$A\setminus I$ such that~$fg\in I$. Now~$\vanishing(I)$ is a closed subset in the Zariski topology on~$\Spec A$ and so are~$\vanishing(I,f_1)$ and~$\vanishing(I,f_2)$. We wish to prove that~$\vanishing(I)=\vanishing(I,f_1)\cup\vanishing(I,f_2)$ where~$\vanishing(I,f_i)\subsetneqq\vanishing(I)$.
+
+  Resorting to the manipulation of symbols we have
+  \begin{equation}
+    \begin{aligned}
+      \vanishing(I,f_1)\cup\vanishing(I,f_2)&=\left\{ [\mathfrak{p}]\in\Spec A\,|\,(I,f_1)\subseteq\mathfrak{p}\vee(I,f_2)\subseteq\mathfrak{p} \right\} \\
+      &=\left\{ [\mathfrak{p}]\in\Spec A\,|\,I\subseteq\mathfrak{p}\vee f_1f_2\in\mathfrak{p} \right\} \\
+      &=\vanishing(I)
+    \end{aligned}.
+  \end{equation}
+\end{exercise}
