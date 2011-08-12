@@ -52,8 +52,13 @@
   The first maximal ideal is~$(x^2+y^2-4,x-y)$ while the second is~$(x^2+y^2-4,x+y)$. The residue fields are~$\mathbb{Q}(\sqrt{2})$ in both cases: substituting the second generator in the first yields this result.
 \end{exercise}
 
-\begin{exercise} % TODO do this
-  I'm still wondering whether my answer is correct.
+\begin{exercise}
+  \label{exercise:42f}
+  \begin{enumerate}
+    \item Let~$m_\pi(x)$ be the minimal polynomial of~$\pi\in\mathbb{C}$ if~$\pi\in\mathbb{Q}^{\alg}$ and zero otherwise. Now the image of~$(\pi,\pi^2)$ under~$\phi$ is given by the irreducible polynomial~$m_{\pi}(x)+m_{\pi^2}(y)$.
+
+    \item I don't know\todo{\autoref{exercise:42f}: prove surjectivity of~$\mathbb{C}^2\to\mathbb{A}_{\mathbb{Q}}^2$}.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -65,9 +70,13 @@
   where~$I\subseteq J$ are prime ideals of~$A$, and this is equivalent to~$\overline{J}$ being prime in~$A/I$.
 \end{exercise}
 
-\begin{exercise} % TODO rewrite this
+\begin{exercise}
   \label{exercise:42h}
-  I have used this fact in~\autoref{exercise:42a}\ref{enumerate:42a-b}. A prime ideal of~$A$ that contains an element of~$S$ will the whole become~$S^{-1}A$ under localization. A prime ideal of~$A$ disjoint of~$S$ remains prime because the product~$(p_1/s_1)(p_2/s_2)$ is in the prime ideal if and only if~$(p_1p_2)/(s_1s_2)$ is in the prime ideal, but we can multiply with~$s_1s_2$ as this is by multiplicativity of~$S$ not a member of the prime ideal. Now we have reduced it to~$p_1p_2$ in the prime ideal.
+  I have used this fact in~\autoref{exercise:42a}\ref{enumerate:42a-b}. A prime ideal~$\mathfrak{p}$ of~$A$ that contains an element of~$S$ will become~$S^{-1}A$ under localization: take an element~$s\in\mathfrak{p}\cap S$, this is mapped to~$(s/1)$ by the canonical~$A\to S^{-1}A$, but~$(1/s)$ is an element of~$S^{-1}A$, so~$1\in S^{-1}\mathfrak{p}$ and it is not a prime ideal.
+
+  We now have by the preservation of primes under an inverse ring morphism that~$\Spec S^{-1}A\to\Spec A$ associates prime ideals to prime ideals. The fact that this is a bijection comes from taking the forward map: a prime~$\mathfrak{p}$ of~$S^{-1}A$ not meeting~$S$ is mapped to itself (as mentioned before, primes that do meet~$S$ are mapped to the whole of~$S^{-1}A$).
+  
+  Conversely, suppose~$\mathfrak{q}$ prime in~$A$, then~$S^{-1}(A\setminus\mathfrak{q})$ is a multiplicative subset of~$S^{-1}A$ and~$S^{-1}A=S^{-1}(A\setminus\mathfrak{q})\coprod S^{-1}\mathfrak{q}$ so~$S^{-1}\mathfrak{q}$ is prime. This was inspired by Atiyah-Macdonald.
 \end{exercise}
 
 \begin{exercise} % TODO do this
