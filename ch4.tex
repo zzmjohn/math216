@@ -263,9 +263,9 @@ There are no exercises in this section.
   and~$I\nsubseteq\mathfrak{p}$ if there is an~$f\in S$ such that~$f\notin\mathfrak{p}$, so~$\distinguished(f)\subseteq X\setminus\vanishing(S)$ in this case. We obtain~$X\setminus\vanishing(S)=\bigcup_{f\in S}\distinguished(f)$ as desired.
 \end{exercise}
 
-\begin{exercise} % TODO do this
+\begin{exercise}
   \label{exercise:45b}
-  I have to write down a nice answer.
+  I have to write down a nice answer\footnote{\autoref{exercise:45b}: $\bigcup_{i\in J}\distinguished(f_i)=A$ if and only if~$(f_i)=A$}.
 \end{exercise}
 
 \begin{exercise}
@@ -285,9 +285,11 @@ There are no exercises in this section.
   because~$\mathfrak{p}$ is prime, so~$fg$ cannot be an element of it unless at least one of the factors is.
 \end{exercise}
 
-\begin{exercise} % TODO second equivalence
+\begin{exercise}
   \label{exercise:45e}
   By taking complements we can reduce this to~\autoref{exercise:44i}.
+
+  Now if~$f^n\in(g)$ we have~$f^n=ag$ with~$a\in A$, which after multiplication with~$(1/f^n)$ in~$A_f$ is sent to a unit. Conversely, if~$g$ is a unit in~$A_f$ there exists an~$(a/f^n)\in A_f$ such that~$(ag/f^n)=1$, or~$ag=f^n$, implying~$f^n\in(g)$.
 \end{exercise}
 
 \begin{exercise}
@@ -338,11 +340,12 @@ There are no exercises in this section.
   \end{equation}
 \end{exercise}
 
-\begin{exercise} % TODO do this
+\begin{exercise}
+  \label{exercise:46h}
   \begin{enumerate}
-    \item This is too tricky for the moment, I'll come back to this later.
+    \item This is too tricky for the moment, I'll come back to this later\todo{\autoref{exercise:46h}: irreducibility of the cone over the twisted cubic}.
 
-    \item This is too tricky for the moment, I'll come back to this later.
+    \item This is too tricky for the moment, I'll come back to this later\todo{\autoref{exercise:46h}: generalization to degree~$n$ rational normal curves}.
   \end{enumerate}
 \end{exercise}
 
@@ -360,12 +363,13 @@ There are no exercises in this section.
   Assume every ideal of~$A$ is finitely generated, but~$A$ is not Noetherian. Take an infinite ascending chain of ideals, the union is again an ideal. This ideal is finitely generated, so take the index for which each of the generators is contained in the ideal at that position of the chain. We have equality for all subsequent ideals, contradicting the lack of Noetherianness.
 \end{exercise}
 
-\begin{exercise} % TODO do this
+\begin{exercise}
+  \label{exercise:46k}
   Suppose~$I\subset A[[x]]$ is an ideal, let~$I_n\subset A$ be the set of coefficients of the term~$x^n$ in elements of~$I$. Because~$I$ is an ideal, the sum of two elements in~$I_n$ corresponds to the sum of the inducing power series and by the pointwise definition of the sum we have that the sum of the coefficient of~$x^n$ is contained in~$I_n$. Likewise for the pointwise scalar multiplication, as~$A$ is embedded in~$A[[x]]$ as the constant power series.
 
   By multiplication with~$x$ of an~$f\in I$ we have~$I_n\subseteq I_{n+1}$, which by the Noetherianness of~$A$ stabilizes.
 
-  The last part of the hint baffles me though.
+  The last part of the hint baffles me though\todo{\autoref{exercise:46k}: Noetherianness of power series ring over Noetherian ring}.
 \end{exercise}
 
 \begin{exercise}
