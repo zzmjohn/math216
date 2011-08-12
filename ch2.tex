@@ -527,14 +527,74 @@ There are no exercises in this section.
   This is by breaking apart the short exact sequences and putting them back together equivalent to the definition.
 \end{exercise}
 
-\begin{exercise} % TODO do this
+\begin{exercise}
   \begin{enumerate}
-    \item 
+    \item We consider an exact sequence
+      \begin{equation}
+        0\to M'\to M\to M''\to 0 
+      \end{equation}
+      in~$\category{Mod}_A$ that is mapped by~$S^{-1}$ to a sequence
+      \begin{equation}
+        0\to S^{-1}M'\to S^{-1}M\to S^{-1}M''\to 0
+      \end{equation}
+      in~$\category{Mod}_{S^{-1}A}$ and we'll study its exactness.
+
+      This is almost by definition: if we take a morphism~$f\colon M\to M'$ in~$\category{Mod}_A$ we define~$S^{-1}f\colon S^{-1}M\to S^{-1}M'$ to be~$S^{-1}f\colon (m/s)\mapsto (f(m)/s)$. The surjectivity is obviously preserved and if~$(m'_1/s),(m'_2/s)\in S^{-1}M'$ are two different element such that~$S^{-1}f(m'_1/s)=S^{-1}f(m'_2/s)$ we have that~$ss'(f(m'_1)-f(m'_2))=0$ but this implies~$f(m'_1)=f(m'_2)$, a contradiction.
 
     \item See~\autoref{exercise:23h}.
 
-    \item 
+    \item Now considering the exact sequence
+      \begin{equation}
+        0\to M_1\to M_2\to M_3
+      \end{equation}
+      with~$f\colon M_1\to M_2$ and~$g\colon M_2\to M_3$ in~$\category{Mod}_A$, which is transformed to
+      \begin{equation}
+        0\to\Hom(M,M_1)\to\Hom(M,M_2)\to\Hom(M,M_3),
+      \end{equation}
+      in~$\category{Mod}_A$. The preservation of injectivity is satisfied by definition of a monomorphism: take~$g_1,g_2\colon m\to M_1$ such that the induced~$\Hom(M,f)$ maps these to~$f\circ g_1=f\circ g_2$, we have~$g_1=g_2$.
 
-    \item 
+      Now for the exactness at~$\Hom(M,g)$, I was heavily inspired by~\href{http://math.stackexchange.com/questions/47401/hom-is-a-left-exact-functor}{this question at \texttt{math.stackexchange.com}} as my original proof looked quite like the asker's proof. We have~$\image f=\ker g$, so~$g\circ f=0$ and~$f$ has the universal property
+      \begin{equation}
+        \begin{tikzpicture}[description/.style = {fill = white, inner sep = 2pt}, baseline=(current bounding  box.center)]
+          \matrix (m) [matrix of math nodes, row sep = 3em, column sep = 3em, text height = 1.5ex, text depth = 0.25ex]
+          {
+            & M & \\
+            M_1 & M_2 & M_3 \\
+          };
+          \path[->] (m-2-1) edge node[auto] {$f$} (m-2-2)
+                    (m-2-2) edge node[auto] {$g$} (m-2-3)
+                    (m-1-2) edge node[auto] {$h$} (m-2-2)
+                    (m-1-2) edge node[auto] {$0$} (m-2-3);
+          \path[->, dashed] (m-1-2) edge node[left] {$\exists!h'$} (m-2-1);
+        \end{tikzpicture}
+      \end{equation}
+      where~$h\colon M\to M_2$ such that~$g\circ h=0$ and we obtain a factorization~$f\circ h'=h$. So if~$\Hom(M,g)(h)=0$ we have~$\Hom(M,f)(h')=0$ hence we obtain the first inclusion~$\ker\Hom(M,g)\subseteq\image\Hom(M,f)$ and~$\Hom(M,i)$ is injective.
+
+      Now we draw the second diagram
+      \begin{equation}
+        \begin{tikzpicture}[description/.style = {fill = white, inner sep = 2pt}, baseline=(current bounding  box.center)]
+          \matrix (m) [matrix of math nodes, row sep = 3em, column sep = 3em, text height = 1.5ex, text depth = 0.25ex]
+          {
+            & M & \\
+            M_1 & M_2 & M_3 \\
+          };
+          \path[->] (m-2-1) edge node[auto] {$f$}  (m-2-2)
+                    (m-2-2) edge node[auto] {$g$}  (m-2-3)
+                    (m-1-2) edge node[left] {$h'$} (m-2-1)
+                    (m-1-2) edge node[auto] {$h$}  (m-2-2);
+          \path[->, dashed] (m-1-2) edge node[auto] {$0$} (m-2-3);
+        \end{tikzpicture}
+      \end{equation}
+      where~$h\colon M\to M_1$ is such that~$h=f\circ h'=\Hom(M,f)h'$ we easily obtain~$\Hom(M,g)h=0$ because
+      \begin{equation}
+        \Hom(M,g)h=\Hom(M,g)\Hom(M,f)h'=\Hom(M,g\circ f)h'=0\circ f
+      \end{equation}
+      so~$\image\Hom(M,f)\subseteq\ker\Hom(M,g)$. We have obtained equality.
+
+      The covariance is by the position of~$M$: a morphism~$M\to M_1$ gives rise to a morphism~$M\to M_2$ by composing it on the right with~$M_1\to M_2$ (where composition on the right means ``on the right in the diagram'', it's on the left when notated as functions).
+
+      And finally: the proof holds in general abelian categories, we have not assumed anything about a module structure on our objects.
+
+    \item The proof of the left-exactness of~$\Hom(M,\cdot)$ can be adapted to proof right-exactness of~$\Hom(\cdot,M)$, noting that we have contravariance: given~$M_2\to M$ we obtain a morphism~$M_1\to M$ by composing it on the left.
   \end{enumerate}
 \end{exercise}
