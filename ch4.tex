@@ -1,11 +1,16 @@
 \section{Toward schemes}
 
-\begin{exercise} % TODO do this
-  I should be ashamed of myself, not being able to answer this question.
+\begin{exercise} 
+  \label{exercise:41a}
+  Take~$U$ and~$V$ open in respectively~$X$ and~$Y$ such that for the corresponding charts~$\phi$ and~$\psi$ the images~$\phi(U)$ and~$\psi(V)$ are homeomorphic to an open subset of respectively~$\mathbb{R}^n$ and~$\mathbb{R}^m$. Let~$x_i$ and~$y_j$ be respectively the~$i$th and the~$j$th coordinate function for these charts. Now~$f$ is locally described by the maps~$y_j\circ f\circ\phi^{-1}$ which is differentiable, so~$\psi\circ f\circ\phi^{-1}$ is differentiable too and this is all compatible, describing the map~$f$ as a differentiable map of differentiable manifolds.
+
+  Or shorter: the pullback of~$g\colon Y\to\mathbb{R}$ a differentiable function on~$Y$ is defined as~$f_*g\colon X\to\mathbb{R}:x\mapsto g(f(x))$.
 \end{exercise}
 
-\begin{exercise} % TODO do this
-  I should be ashamed of myself, not being able to answer this question.
+\begin{exercise}
+  We have that~$f_*\mathcal{O}_X$ has stalk isomorphisms for every~$f(p)=q$. So by~\autoref{exercise:41a} we get induced stalk morphisms~$\mathcal{O}_{Y,q}\to f_*\mathcal{O}_{X,p}$, inducing the desired morphism of stalks~$f^{\#}$.
+
+  By the definition of~$f^{\#}$ we have that a function~$g\colon Y\to\mathbb{R}$ such that~$g(q)=0$ is mapped by~\autoref{exercise:41a} to~$f^{\#}(g)(p)=g(f(p)=g(q)=0$, so we have the inclusion~$f^{\#}(\mathfrak{m}_{Y,q})\subseteq\mathfrak{m}_{X,p}$.
 \end{exercise}
 
 
