@@ -1,5 +1,32 @@
 \section{The structure sheaf of an affine scheme}
 
 \begin{exercise}
-  Just testing.
+  We have~$\vanishing(f)=\left\{ [\mathfrak{p}]\in\Spec A\,|\,f\in\mathfrak{p} \right\}$, functions not vanishing outside~$\vanishing(f)$ are by~\autoref{exercise:45e} correspond to~$g$ such that~$f^n\in(g)$. Therefore the localisation~$\mathcal{O}_{\Spec A}(\distinguished(f))$ consists of fractions such that the denominator is an element of the principal ideal~$(g)$ such that~$f^n\in(g)$. Remark that this is obviously a multiplicative set and the isomorphism is given by the result of~\autoref{exercise:45e}.
+\end{exercise}
+
+\begin{exercise}
+  This really boils down to judiciously replacing~$A$ by~$A_f$. We obtain:
+  \begin{quote}
+    We check identity on the base. Suppose that~$\Spec A_f=\bigcup_{i\in I}\distinguished(f_i)$ where~$i$ runs over some index set~$I$. Then there is some finite subset of~$I$, which we name~$\left\{ 1,\ldots,n \right\}$, such that~$\Spec A_f=\bigcup_{i=1}^n\distinguished(f_i)$, \ie,~$(f_1,\ldots,f_n)=A_f$ (quasicompactness of~$\Spec A_f$, \autoref{exercise:45c}).
+
+    Suppose we are given~$s\in A_f$ such that~$\res_{\Spec A_f,\distinguished(f_i)}s=0$ in~$A_{f_i}$ for all~$i$. We wish to show that~$s=0$. The fact that~$\res_{\Spec A_f,\distinguished(f_i)}s=0$ in~$A_{f_i}$ implies that there is some~$m$ such that for each~$i\in\left\{ 1,\ldots,n \right\}$, ~$f_i^ms=0$. Now~$(f_1^m,\ldots,f_n^m)=A_f$, for example, from
+    \begin{equation}
+      \Spec A_f=\bigcup_{i=1}^n\distinguished(f_i)=\bigcup_{i=1}^n\distinguished(f_i^m),
+    \end{equation}
+    so there are~$r_i\in A_f$ with~$\sum_{i=1}^nr_if_i^m=1$ in~$A_f$, from which
+    \begin{equation}
+      s=\left( \sum_{i=1}^nr_if_i^m \right)s=\sum_{i=1}^nr_i(f_i^ms)=0.
+    \end{equation}
+    Thus we have checked the ``base identity'' axiom for~$\Spec A_f$.
+  \end{quote}
+\end{exercise}
+
+\begin{exercise}
+  \label{exercise:51c}
+  Again, replacing~$A$ with~$A_f$, open covers of~$\Spec A$ with open covers of the open subspace~$\Spec A_f$ and copying the entire proof suffices. Only three occurences of~$A$ should be replaced with~$A_f$
+\end{exercise}
+
+\begin{exercise}
+  \label{exercise:51d}
+  We have to redo Theorem~5.1.2, but now for this more general construction\todo{\autoref{exercise:51d}: prove that~$\tilde{M}$ is a sheaf}.
 \end{exercise}
