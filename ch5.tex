@@ -71,3 +71,35 @@ There are no exercises in this section.
   
   The localization at a prime ideal on the other hand is the localization at the complement~$A\setminus\mathfrak{p}$. We obtain the desired result.
 \end{exercise}
+
+
+\section{Three examples}
+
+\begin{exercise}
+  The set~$X$ is given by~$\coprod_iX_i/{\sim}$ where~$\sim$ identifies homeomorphic open sets by the isomorphisms of ringed spaces~$f_{i,j}X_{i,j}\to X_{j,i}$ and~$X_i$ is the underlying topological space of the ringed space\footnote{Just to be completey unambiguous.}. This immediately induces a topology on the obtained set~$X$.
+
+  Now for the sections of the sheaf: open sets are arbitrary unions of open sets in each~$X_i$, where identification can take place. A section is nothing more but pasting sections together, which by the isomorphisms~$f_{i,j}$ and the cocycle condition is completely valid. We have defined a scheme~$X$ such that every scheme~$X_i$ is an open subscheme, the isomorphic parts are glued together in the canonical way, everything is unique up to unique isomorphism as there hasn't been any possible choice.
+\end{exercise}
+
+\begin{exercise}
+  The only point in which sections over~$U$ and~$V$ can disagree are the origins. Sections over~$U$ and~$V$ lie in the rings~$k[t,1/t]$ and~$k[u,1/u]$ which are identified by~$t\mapsto u$. So for functions to agree they have to be equal under this identification and be defined on the part that is not identified. But an element of~$k[t,1/t]$ extends to~$\mathbb{A}_k^1$ if and only if it is defined in the origin, so we only have polynomials to choose from! Therefore~$\sections(X,\mathcal{O}_X)\cong k[t]$. But if the scheme were affine, we'd have~$X=\Spec k[t]$, a contradiction as we obviously have two origins.
+\end{exercise}
+
+\begin{exercise}
+  \label{exercise:54c}
+  Is there something special about the definition\todo{\autoref{exercise:54c}: define affine plane with doubled origin}?
+
+  Two affine open sets with a non-affine open intersection are given by taking~$U$ and~$V$ and adding the respective origins. We have that these open subsets are affine, being isomorphic to~$\Spec k[x,y]$ yet their intersection is~$\mathbb{A}_k^2\setminus\left\{ (0,0) \right\}$ which is not affine by the previous remarks.
+\end{exercise}
+
+\begin{exercise}
+  Because we're considering the restrictions to the intersections of the isomorphisms, we have~$x_{i/j}x_{j/k}x_{k/i}=1$ which gives us the desired cocycle condition. I might have to phrase this a little bit more concretely though.
+\end{exercise}
+
+\begin{exercise}
+  Like in Proposition~5.4.8 where we've proved that~$\mathbb{P}_k^1$ is not affine we can take two affine open sets and we have that a section on their overlap are polynomials in the~$x_i$, adding~$1/x_i$ in one open set and~$1/x_j$ in the other. Now we have~$f(x_1,\ldots,x_n,1/x_i)=g(x_1,\ldots,x_n,1/x_j)$ (so~$x_j$ isn't inverted in~$f$ and~$x_i$ not in~$g$), so we only have the constant functions as sections over two affine open subsets. This extends to the global sections.
+\end{exercise}
+
+\begin{exercise}
+  A point~$[a_0;\ldots;a_n]$ in~$\mathbb{P}_k^n$ such that not all the~$a_i$ are zero is contained in every affine open subset~$U_j$ where~$a_j\neq 0$, by considering it to be the point~$(a_0/a_j,\ldots,a_{j-1}/a_j,a_{j+1}/a_j,\ldots,a_n/a_j)$ in~$\mathbb{A}_k^n$ which is compatible under the isomorphisms. Now the~$\lambda\in k^{\times}$ all vanish under these fractions, we never divide by zero, so these points are identified.
+\end{exercise}
